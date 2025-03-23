@@ -1,0 +1,23 @@
+body {
+  background-color: rgb(255, 255, 138);
+}
+
+.intervalo-two{
+  color: blue;
+}
+
+@media (min-width: 1000px) {
+  body {
+    background-color: lightgreen;
+  }
+}
+
+@media (min-width: 650px) and (max-width: 999px) {
+  .intervalo {
+    color: blue;
+  }
+
+  .intervalo-two{
+    color: red;
+  }
+}

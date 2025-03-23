@@ -1,0 +1,15 @@
+p {
+    width: 500px;
+    background-color: lightblue;
+    border: 50px solid red;
+}
+
+.bx {
+    /*El tamaño cuenta desde el contenido hasta el borde*/
+    box-sizing: border-box;
+}
+
+.by {
+    /*El tamaño es solo el contenido*/
+    box-sizing: content-box;
+}

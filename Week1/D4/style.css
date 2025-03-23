@@ -1,0 +1,59 @@
+/*Mobile first! Primero se hace la versión "pequeña" que es para móviles.*/
+body {
+  background-color: rgb(255, 255, 138);
+}
+
+span {
+  background-color: blue;
+  color: white;
+}
+
+.intervalo{
+    color: blue;
+}
+
+.limite {
+    background-color: lightcoral;
+    width: 50vw;
+    max-width: 200px;
+    min-width: 100px;
+}
+
+/*Importante! Los @media siempre van al final del código CSS*/
+/*
+min-width -> Si estoy por encima de...
+max-width -> Si estoy por debajo de...
+*/
+@media (min-width: 650px) and (max-width: 999px){
+    .intervalo{
+        color: red;
+    }    
+}
+
+/*La línea 12 se lee: Oye, CSS, ejecuta este código siempre que la pantalla sea MAYOR O IGUAL que 1000px*/
+@media (min-width: 1000px) {
+  body {
+    background-color: lightgreen;
+  }
+
+  span {
+    background-color: black;
+  }
+}
+
+
+/*
+Si estoy en mobile first debo escribirlo todo en orden creciente.
+
+¿Por qué?
+
+Imaginemos que yo no lo pongo en orden creciente. 
+
+1º Defecto -> Mobile. 
+2º A partir de 3000px
+3º A partir de 1000px
+
+Si este es el caso, cuando tenga 4000px se leerá en último lugar el de 1000px, por lo que se sobreescribirá el de 3000px, por lo tanto nunca tendremos una lectura del punto dos.
+*/
+
+

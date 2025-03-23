@@ -1,0 +1,98 @@
+.container {
+  max-width: 800px;
+  margin: 20px auto;
+  padding: 20px;
+}
+
+.animated-box {
+  position: relative;
+  width: 100px;
+  height: 100px;
+  background-color: lightblue;
+  margin-bottom: 20px;
+  text-align: center;
+  line-height: 100px;
+  border-radius: 5px;
+}
+
+.animated-box1 {
+  animation: slide 2s infinite alternate;
+}
+
+@keyframes slide {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(50px);
+  }
+}
+
+.animated-box2 {
+  animation: rotate 1s infinite;
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.animated-box3 {
+  animation: color-change 2s infinite;
+}
+
+@keyframes color-change {
+  0% {
+    background-color: lightblue;
+  }
+  50% {
+    background-color: lightgreen;
+  }
+  100% {
+    background-color: lightblue;
+  }
+}
+
+.green {
+  background-color: green;
+  z-index: 1;
+}
+
+/**** A PARTIR DE AQUÍ, TRANSICIONES ****/
+.transition-box {
+  width: 200px;
+  height: 100px;
+  background-color: lightgreen;
+  text-align: center;
+  line-height: 100px;
+  border-radius: 5px;
+  margin-bottom: 50px;
+}
+
+.transition-box:hover {
+  background-color: lightblue;
+}
+
+.box {
+  display: block;
+  width: 100px;
+  height: 100px;
+  background-color: blue;
+  color: white;
+}
+
+.box:hover {
+  background-color: lightcoral;
+  color: black;
+  width: 200px;
+  height: 200px;
+  transition-property: width, color;
+  /* transition-property: all; */
+  transition-duration: 2s;
+  transition-timing-function: linear;
+  transition-delay: 1s;
+}

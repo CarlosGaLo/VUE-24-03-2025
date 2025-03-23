@@ -1,0 +1,30 @@
+body{
+    height: 200vh;
+}
+
+.relative {
+  background-color: lightblue;
+  position: relative;
+  top: 250px;
+  left: 50px;
+}
+
+.elem {
+  background-color: lightcoral;
+}
+
+.absolute {
+  background-color: lightgreen;
+  position: absolute;
+  top: 200px;
+  left: 50px;
+}
+
+.alert {
+  position: fixed;
+  height: 500px;
+  width: 100%;
+  background-color: brown;
+  color: white;
+  top: 90vh;
+}

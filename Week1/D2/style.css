@@ -1,0 +1,44 @@
+html, body, *{
+    /* TO DO */
+    margin: 0;
+}
+
+* {
+    color: blueviolet;
+}
+
+body {
+  background-color: #ddedf0;
+  background-color: red;
+  background-color: rgb(170, 203, 170);
+}
+
+p {
+  background-color: green;
+  display: inline;
+  font-size: 80px;
+}
+
+.azul {
+  color: blue;
+  border: 10px solid aquamarine;
+}
+
+.texto-grande {
+  font-size: 50px;
+}
+
+#verde {
+  color: green;
+  background-color: blue;
+}
+
+.class-one {
+    color: blue;
+    background-color: red;
+}
+
+.class-two {
+    color: brown;
+    background-color: burlywood;
+}

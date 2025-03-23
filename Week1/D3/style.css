@@ -1,0 +1,41 @@
+body {
+  background-color: lightcoral;
+}
+
+.ejemplo-box-model {
+  width: 200px;
+  height: 400px;
+  background-color: lightblue;
+  border: 15px solid red;
+  padding: 50px;
+  margin: 100px 50px;
+  border-radius: 30px;
+}
+
+.separator {
+  margin-top: 100px;
+}
+
+p {
+  padding: 10px;
+}
+
+.input {
+  margin-top: 20px;
+  margin-left: 20px;
+  padding: 5px;
+}
+
+.flex div{
+    background-color: lightcyan;
+    margin: 10px;
+}
+
+.flex div:nth-child(2n){
+    background-color: green;
+    margin: 10px;
+}
+
+.flex{
+    display: flex;
+}

@@ -1,0 +1,43 @@
+:root{
+    --verde: rgb(18, 29, 75);
+}
+
+*, html, body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  /* Aquí cambiamos la tipografía */
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  /* Aquí cambiamos el tamaño de la letra*/
+  font-size: 20px;
+  /* Aquí cambiamos el color de la letra, y así se usa una variable */
+  color: var(--verde);
+  /* Aquí cambiamos el peso de la letra */
+  font-weight: 200;
+}
+
+.iluminar {
+  color: white;
+  background-color: black;
+}
+
+.iluminar:hover {
+  color: blue;
+  background-color: yellow;
+}
+
+.lista li:nth-child(2n + 1) {
+  background-color: grey;
+}
+
+.w-50 {
+  font-size: 50px;
+}
+
+p.w-50 {
+  background-color: grey;
+}
+
+table tr td:first-child {
+  font-weight: bold;
+}

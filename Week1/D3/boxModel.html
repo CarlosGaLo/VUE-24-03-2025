@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Clase de CSS: Box-Model y Positioning</title>
+    <link rel="stylesheet" href="boxModel.css" />
+  </head>
+  <body>
+    <div class="box-model">
+      <h2>Box-Model</h2>
+      <p>
+        El box model en CSS describe cómo se visualiza y se comporta un elemento
+        en la página web.
+      </p>
+      <div class="box">
+        <p>El contenido tiene el fondo azul.</p>
+        <p>El relleno del padding está en amarillo</p>
+        <p>El borde está en rojo</p>
+        <p>
+          El margin es la distancia entre el borde de la caja y el resto de
+          elementos de la web.
+        </p>
+        <p>Acuérdate de usar el inspector (F12) para revisar las distancias.</p>
+      </div>
+    </div>
+
+    <div class="positioning">
+      <h2>Positioning</h2>
+      <p>
+        El posicionamiento en CSS determina cómo se ubican los elementos en
+        relación con su entorno.
+      </p>
+      <div>
+        <section>
+          <span>Este es un párrafo normal hecho en span.</span>
+          <span class="relative"
+            >Elemento posicionado de forma relativa, con span.</span
+          >
+          <span
+            >Mira cómo afecta el posicionamiento relative a otros elementos.
+            Aunque el texto relative (en verde) se haya desplazado, la web
+            reserva su espacio original.</span
+          >
+        </section>
+        <br /><br /><br /><br /><br />
+        <section>
+          <span>Este es un párrafo normal hecho en span.</span>
+          <span class="absolute"
+            >Elemento posicionado de forma absolute, con span.</span
+          >
+          <span
+            >Fíjate como, pese a que el span anterior sea absolute, aparece muy
+            lejos de su posición original. Absolute se mide desde el punto 0,0
+            de la web (arriba a la izquierda). La web no reserva el espacio de
+            un bloque absolute.</span
+          >
+        </section>
+      </div>
+    </div>
+  </body>
+</html>
