@@ -12,7 +12,7 @@
    5. Teoría
    6. Prácticas
    7. Self-guided
-   8. Metodología (5 a 15 minutos por punto)
+   8. Metodología
       1. Conocimiento propio
       2. Grabaciones de clase
       3. Internet (IA o documentación clásica)
