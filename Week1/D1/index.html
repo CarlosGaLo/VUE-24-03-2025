@@ -4,29 +4,99 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <div id="container">
-      <nav id="topnav">
-        <a href="index.html">HOME</a> | <a href="about.html">ABOUT US</a> |
-        <a href="menu.html">MENU</a> |
-        <a href="contact.html">CONTACT US</a>
+    <header>
+      <nav>
+        <ul>
+          <li>
+            <a href="https://www.google.es/" target="_blank">Google</a>
+          </li>
+          <li>
+            <a href="#texto" target="_blank">Texto Largo</a>
+          </li>
+          <li>
+            <a href="https://www.google.es/" target="_blank">Google</a>
+          </li>
+        </ul>
       </nav>
+    </header>
 
-      <section id="content">
-        <h1>The Ironhack Breakfast Place</h1>
-        <p>Here you will find all sorts of delicious treats</p>
-        <figure>
-          <img
-            src="https://s3-eu-west-1.amazonaws.com/ih-materials/uploads/upload_0a71675959113ca9b4489dcb4cb35d1c.png"
-          />
-          <figcaption>powered by brekkie.</figcaption>
-        </figure>
+    <main>
+      <h1>Esto es un Título o cabecera</h1>
+      <p>Y ahora añado aquí un párrafo.</p>
+      <span>Esto es otro texto.</span>
+      <p>Esto es un texto con un <span>span</span> dentro</p>
+      <span
+        >Esto es un texto con un
+        <p>p</p>
+        dentro.</span
+      >
+
+      <ul>
+        <li class="verde grande">Explicar Prettier</li>
+        <li>Otro LI</li>
+      </ul>
+
+      <h2>Receta del batido de Plátano</h2>
+      <ol>
+        <li class="verde grande" id="identificador">
+          Echar 2 yogurest en la batidora.
+        </li>
+        <li>Echar dos plátanos en la batidora</li>
+        <li>Echar 100ml de leche</li>
+        <li>Batir</li>
+      </ol>
+
+      <div>
+        <p class="verde grande" id="identificador">
+          1. Echar 2 yogurest en la batidora.
+        </p>
+        <p>2. Echar dos plátanos en la batidora</p>
+        <p>3. Echar 100ml de leche</p>
+        <p>4. Batir</p>
+      </div>
+
+      <section>
+        <article>
+          <div></div>
+        </article>
       </section>
 
-      <footer>
-        <p class="love">Made with love by Ironhack</p>
-      </footer>
+      <img
+        src="https://s3-eu-west-1.amazonaws.com/ih-materials/uploads/upload_0a71675959113ca9b4489dcb4cb35d1c.png"
+        alt="Desayuno sano y rico"
+      />
+    </main>
+
+    <table>
+      <thead>
+        <th>Tipo de dato 1</th>
+        <th>Tipo de dato 2</th>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Dato 1</td>
+          <td>Dato 2</td>
+        </tr>
+        <tr>
+          <td>Dato 3</td>
+          <td>Dato 4</td>
+        </tr>
+      </tbody>
+      <tfoot>
+        <td>Cierre 1</td>
+        <td>Cierre 2</td>
+      </tfoot>
+    </table>
+
+    <br><br><br><br><br><br><br><br><br><br>
+
+    <div id="texto">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam illo dicta repellendus explicabo ex excepturi est corporis enim mollitia voluptatum blanditiis velit aspernatur nemo, odio pariatur, quod officiis ipsa perferendis.
     </div>
+
+    <footer></footer>
   </body>
 </html>
