@@ -1,9 +1,6 @@
 1. Presentaciones
-   1. Nombre
-   2. Edad
-   3. Una afición
-   4. Conocimiento previo
-   5. Mac o Windows
+   1. Conocimiento previo
+   2. Mac o Windows
 2. Cómo serán las clases
    1. Asistencia
    2. Cámaras
