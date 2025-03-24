@@ -28,3 +28,11 @@ Imaginate que tienes una página web en buen estado y su verisón
    2. Sea demadiado corto
    3. No sea explícito
    4. Esté en un idioma que no sea inglés
+
+### Cómo se suben cambios. 
+1. `git add .`
+2. `git commit -m "tu mensaje"`
+3. `git push`
+
+### Cómo se descargan cambios. 
+1. `git pull`
