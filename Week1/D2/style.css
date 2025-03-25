@@ -1,44 +1,35 @@
-html, body, *{
-    /* TO DO */
-    margin: 0;
+*, html, body{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
-* {
-    color: blueviolet;
+.box-model{
+  background-color: cadetblue;
+  width: 200px;
+  height: 200px;
+  /* border-radius: 50%; */
+  padding: 30px;
+  border: 5px solid black;
+  margin: 50px;
 }
 
-body {
-  background-color: #ddedf0;
-  background-color: red;
-  background-color: rgb(170, 203, 170);
+.box-model p{
+  color: brown;
 }
 
-p {
+.elemento-asimetrico{
   background-color: green;
-  display: inline;
-  font-size: 80px;
-}
-
-.azul {
-  color: blue;
-  border: 10px solid aquamarine;
-}
-
-.texto-grande {
-  font-size: 50px;
-}
-
-#verde {
-  color: green;
-  background-color: blue;
-}
-
-.class-one {
-    color: blue;
-    background-color: red;
-}
-
-.class-two {
-    color: brown;
-    background-color: burlywood;
+  /* background-image: url("https://m.media-amazon.com/images/M/MV5BN2NmN2VhMTQtMDNiOS00NDlhLTliMjgtODE2ZTY0ODQyNDRhXkEyXkFqcGc@._V1_.jpg");
+  background-size: 100%;
+  background-repeat: no-repeat; */
+  /* width: 300px; */
+  width: 100vw;
+  height: 500px;
+  padding-top: 50px;
+  /* margin-left: 50px;
+  margin-top: 50px; */
+  /* padding: 50px 0 0 50px; */
+  text-align: center;
 }
