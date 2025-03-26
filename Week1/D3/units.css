@@ -25,11 +25,15 @@ p {
 
 .padre-porcentaje {
   width: 50vw;
-  height: 15vh;
+  height: 20vh;
   background-color: lightgreen;
 }
 
 .porcentaje {
+  min-width: 200px;
+  min-height: 10px;
+  max-width: 500px;
+  max-height: 50px;
   width: 50%;
   height: 20%;
 }

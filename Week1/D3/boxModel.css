@@ -22,16 +22,11 @@ body {
 
 .relative {
   position: relative;
-  /*Empujamos desde arriba*/
-  top: 50px;
-  /*Empujamos desde la izquierda*/
-  left: 50px;
-  width: 150px;
-  height: 150px;
   background-color: lightgreen;
   border: 2px solid green;
-  padding: 20px;
-  margin: 20px;
+  top: 0px;
+  left: 100px;
+  margin-left: 500px;
 }
 
 .absolute {
