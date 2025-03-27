@@ -1,0 +1,636 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Películas de Ciencia Ficción y Fantasía</title>
+    <style>
+      /* ================================
+       VARIABLES DE ESTILO
+       ================================ */
+      :root {
+        --color-primario: #1e1e2f;
+        --color-secundario: #2c2c44;
+        --color-terciario: #33334a;
+        --color-acento: #e76f51;
+        --color-texto: #f4f4f4;
+        --color-texto-secundario: #cccccc;
+        --fuente-primaria: Arial, Helvetica, sans-serif;
+      }
+
+      /* ================================
+       RESETEO BÁSICO
+       ================================ */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      /* ================================
+       ESTILOS GENERALES
+       ================================ */
+      body {
+        font-family: var(--fuente-primaria);
+        background: linear-gradient(120deg, #15151f, #212139);
+        color: var(--color-texto);
+        line-height: 1.6;
+      }
+
+      h1,
+      h2,
+      h3,
+      h4,
+      h5 {
+        margin-bottom: 0.5rem;
+      }
+
+      p {
+        margin-bottom: 1rem;
+      }
+
+      /* Enlaces de navegación */
+      a {
+        text-decoration: none;
+        color: var(--color-texto);
+        transition: color 0.3s ease;
+      }
+      a:hover {
+        color: var(--color-acento);
+      }
+
+      /* ================================
+       HEADER
+       ================================ */
+      header {
+        background-color: var(--color-primario);
+        padding: 1.5rem;
+      }
+
+      header h1 {
+        text-align: center;
+        font-size: 2.2rem;
+        letter-spacing: 2px;
+      }
+
+      nav {
+        display: flex;
+        justify-content: center;
+        margin-top: 1rem;
+      }
+
+      nav ul {
+        display: flex;
+        list-style: none;
+        gap: 1.5rem;
+      }
+
+      /* ================================
+       HERO
+       ================================ */
+      .hero {
+        background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+          url("https://img.aullidos.com/imagenes/caratulas/dungeons-dragons-honor-ladrones-poster-2.jpg");
+        background-size: cover;
+        background-position: center;
+        padding: 4rem 2rem;
+        text-align: center;
+      }
+
+      .hero h2 {
+        font-size: 2rem;
+        margin-bottom: 1rem;
+      }
+
+      .hero p {
+        font-size: 1.1rem;
+        color: var(--color-texto-secundario);
+        max-width: 600px;
+        margin: 0 auto;
+      }
+
+      /* ================================
+       PELÍCULAS DESTACADAS (GRID)
+       ================================ */
+      .peliculas-destacadas {
+        background-color: var(--color-secundario);
+        padding: 3rem 2rem;
+      }
+
+      .peliculas-destacadas h2 {
+        text-align: center;
+        margin-bottom: 2rem;
+        font-size: 1.8rem;
+      }
+
+      .grid-peliculas {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 2rem;
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+
+      .grid-peliculas article {
+        background-color: var(--color-terciario);
+        border-radius: 8px;
+        overflow: hidden;
+        transition: transform 0.3s ease;
+        display: flex;
+        flex-direction: column;
+      }
+
+      .grid-peliculas article:hover {
+        transform: scale(1.02);
+      }
+
+      .grid-peliculas img {
+        width: 100%;
+        height: 300px;
+        object-fit: cover;
+      }
+
+      .grid-peliculas h3 {
+        font-size: 1.2rem;
+        padding: 1rem;
+      }
+
+      .grid-peliculas p {
+        padding: 0 1rem 1rem;
+        color: var(--color-texto-secundario);
+        flex: 1;
+      }
+
+      /* ================================
+       PRÓXIMOS ESTRENOS (FLEX)
+       ================================ */
+      .proximos-container {
+        background-color: #222232;
+        padding: 3rem 2rem;
+      }
+
+      .proximos-container h2 {
+        text-align: center;
+        margin-bottom: 2rem;
+        font-size: 1.8rem;
+      }
+
+      .proximos-estrenos {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 2rem;
+        max-width: 1200px;
+        margin: 0 auto;
+        justify-content: space-evenly;
+      }
+
+      .proximos-estrenos .estreno {
+        flex: 1 1 300px;
+        background-color: var(--color-primario);
+        margin: 0.5rem;
+        border-radius: 8px;
+        overflow: hidden;
+        transition: all 0.3s ease;
+        display: flex;
+        flex-direction: column;
+      }
+
+      .proximos-estrenos .estreno:hover {
+        transform: scale(1.02);
+      }
+
+      .proximos-estrenos img {
+        width: 100%;
+        height: 250px;
+        object-fit: cover;
+      }
+
+      .proximos-estrenos h4 {
+        font-size: 1.3rem;
+        margin-top: 1rem;
+        margin-left: 1rem;
+      }
+
+      .proximos-estrenos p {
+        margin: 0.5rem 1rem 1rem;
+        color: var(--color-texto-secundario);
+        flex: 1;
+      }
+
+      /* ================================
+       SOBRE EL GÉNERO
+       ================================ */
+      .sobre-seccion {
+        background-color: #2a2a3a;
+        padding: 3rem 2rem;
+      }
+
+      .sobre-seccion h2 {
+        text-align: center;
+        margin-bottom: 2rem;
+        font-size: 1.8rem;
+      }
+
+      .sobre-seccion p {
+        max-width: 800px;
+        margin: 0 auto;
+        text-align: center;
+        color: var(--color-texto-secundario);
+        line-height: 1.8;
+      }
+
+      /* ================================
+       GALERÍA CINEMATOGRÁFICA (GRID AVANZADO)
+       ================================ */
+      .galeria-container {
+        background-color: var(--color-secundario);
+        padding: 3rem 2rem;
+        /* simple backdrop to differentiate */
+      }
+
+      .galeria-container h2 {
+        text-align: center;
+        margin-bottom: 2rem;
+        font-size: 1.8rem;
+      }
+
+      /* 
+      Ejemplo avanzado de grid con áreas definidas,
+      para un diseño más creativo
+    */
+      .galeria {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: 200px 200px 200px;
+        grid-gap: 1rem;
+        max-width: 1200px;
+        margin: 0 auto;
+        grid-template-areas:
+          "item1 item1 item2"
+          "item3 item4 item2"
+          "item3 item4 item5";
+      }
+
+      /* Asignación de áreas */
+      .galeria .item1 {
+        grid-area: item1;
+      }
+      .galeria .item2 {
+        grid-area: item2;
+      }
+      .galeria .item3 {
+        grid-area: item3;
+      }
+      .galeria .item4 {
+        grid-area: item4;
+      }
+      .galeria .item5 {
+        grid-area: item5;
+      }
+
+      .galeria div {
+        background-color: var(--color-terciario);
+        border-radius: 8px;
+        overflow: hidden;
+        position: relative;
+        transition: transform 0.3s ease;
+      }
+
+      .galeria div:hover {
+        transform: scale(1.03);
+      }
+
+      .galeria div img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+      }
+
+      /* ================================
+       SECCIÓN DE RECOMENDACIONES (FLEX AVANZADO)
+       ================================ */
+      .recomendaciones-container {
+        background-color: #1e1e2f;
+        padding: 3rem 2rem;
+      }
+
+      .recomendaciones-container h2 {
+        text-align: center;
+        margin-bottom: 2rem;
+        font-size: 1.8rem;
+      }
+
+      .recomendaciones {
+        display: flex;
+        flex-direction: row; /* horizontal */
+        flex-wrap: wrap;
+        justify-content: space-around;
+        max-width: 1200px;
+        margin: 0 auto;
+        gap: 2rem;
+      }
+
+      .recomendacion {
+        background-color: var(--color-primario);
+        border-radius: 8px;
+        overflow: hidden;
+        flex: 1 1 300px;
+        min-width: 280px;
+        max-width: 350px;
+        display: flex;
+        flex-direction: column;
+        transition: transform 0.3s;
+      }
+
+      .recomendacion:hover {
+        transform: translateY(-5px);
+      }
+
+      .recomendacion img {
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+      }
+
+      .recomendacion h3 {
+        font-size: 1.2rem;
+        margin: 1rem;
+      }
+
+      .recomendacion p {
+        margin: 0 1rem 1rem;
+        color: var(--color-texto-secundario);
+        flex: 1;
+      }
+
+      /* ================================
+       FOOTER
+       ================================ */
+      footer {
+        background-color: var(--color-primario);
+        padding: 1.5rem;
+        text-align: center;
+        margin-top: 2rem;
+      }
+
+      footer p {
+        color: var(--color-texto-secundario);
+        font-size: 0.9rem;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- ================================
+       HEADER
+       ================================ -->
+    <header>
+      <h1>Universo Sci-Fi & Fantasía</h1>
+      <nav>
+        <ul>
+          <li><a href="#peliculas">Películas Destacadas</a></li>
+          <li><a href="#proximos">Próximos Estrenos</a></li>
+          <li><a href="#sobre">Sobre el Género</a></li>
+          <li><a href="#galeria">Galería</a></li>
+          <li><a href="#recomendaciones">Recomendaciones</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <!-- ================================
+       HERO
+       ================================ -->
+    <section class="hero">
+      <h2>Explora Mundos Increíbles</h2>
+      <p>
+        Viaja más allá de nuestro universo, adéntrate en reinos mágicos,
+        descubre tecnología futurista y revive épicas batallas de espada y
+        hechicería. ¡Las posibilidades son infinitas!
+      </p>
+    </section>
+
+    <!-- ================================
+       PELÍCULAS DESTACADAS (GRID)
+       ================================ -->
+    <section class="peliculas-destacadas" id="peliculas">
+      <h2>Películas Destacadas</h2>
+      <div class="grid-peliculas">
+        <article>
+          <img
+            src="https://lh5.googleusercontent.com/proxy/_gQQFoBZ1vHEY_w5EmOd9eXRUH9Q2BvFhaL8BjEphpNtuCBd5FqIuG46NmWEIWHNTkRAQU5ktGgwm8IAXVqlTIBOksj4MmPeiTQqZcUq2CbXli4gNYEb"
+            alt="Película 1"
+          />
+          <h3>El Imperio de las Estrellas</h3>
+          <p>
+            Una épica aventura galáctica donde un joven héroe debe alzarse
+            contra un régimen autoritario que controla toda la galaxia.
+          </p>
+        </article>
+
+        <article>
+          <img
+            src="https://i.ebayimg.com/images/g/8ykAAOSwg-BfTLqg/s-l1200.jpg"
+            alt="Película 2"
+          />
+          <h3>El Bosque Encantado</h3>
+          <p>
+            En un mundo donde la magia fluye entre los árboles, un grupo de
+            aventureros se enfrenta a un antiguo mal despertado en la
+            profundidad del bosque.
+          </p>
+        </article>
+
+        <article>
+          <img
+            src="https://img.aullidos.com/imagenes/caratulas/dungeons-dragons-honor-ladrones-poster-2.jpg"
+            alt="Película 3"
+          />
+          <h3>Futuro Artificial</h3>
+          <p>
+            La Tierra ha evolucionado hacia una sociedad dominada por
+            inteligencia artificial, mientras un grupo de rebeldes lucha por
+            preservar la humanidad.
+          </p>
+        </article>
+
+        <article>
+          <img
+            src="https://lh5.googleusercontent.com/proxy/_gQQFoBZ1vHEY_w5EmOd9eXRUH9Q2BvFhaL8BjEphpNtuCBd5FqIuG46NmWEIWHNTkRAQU5ktGgwm8IAXVqlTIBOksj4MmPeiTQqZcUq2CbXli4gNYEb"
+            alt="Película 4"
+          />
+          <h3>La Corona Dragón</h3>
+          <p>
+            La historia de un príncipe exiliado que debe formar una alianza con
+            una raza de dragones milenarios para recuperar su reino.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <!-- ================================
+       PRÓXIMOS ESTRENOS (FLEX)
+       ================================ -->
+    <section class="proximos-container" id="proximos">
+      <h2>Próximos Estrenos</h2>
+      <div class="proximos-estrenos">
+        <div class="estreno">
+          <img
+            src="https://i.ebayimg.com/images/g/8ykAAOSwg-BfTLqg/s-l1200.jpg"
+            alt="Próximo Estreno 1"
+          />
+          <h4>Galaxia Perdida</h4>
+          <p>
+            Una expedición a los confines de la galaxia conduce a un
+            descubrimiento que cambiará el curso de la historia.
+          </p>
+        </div>
+        <div class="estreno">
+          <img
+            src="https://lh5.googleusercontent.com/proxy/_gQQFoBZ1vHEY_w5EmOd9eXRUH9Q2BvFhaL8BjEphpNtuCBd5FqIuG46NmWEIWHNTkRAQU5ktGgwm8IAXVqlTIBOksj4MmPeiTQqZcUq2CbXli4gNYEb"
+            alt="Próximo Estreno 2"
+          />
+          <h4>El Reino de Hielo</h4>
+          <p>
+            En un mundo congelado, una princesa guerrera busca la legendaria
+            forja de fuego para salvar su reino.
+          </p>
+        </div>
+        <div class="estreno">
+          <img
+            src="https://img.aullidos.com/imagenes/caratulas/dungeons-dragons-honor-ladrones-poster-2.jpg"
+            alt="Próximo Estreno 3"
+          />
+          <h4>Ciudad Virtual</h4>
+          <p>
+            La realidad y la simulación se fusionan cuando un hacker se adentra
+            en una metrópolis digital llena de secretos.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================================
+       SOBRE EL GÉNERO
+       ================================ -->
+    <section class="sobre-seccion" id="sobre">
+      <h2>Sobre la Ciencia Ficción y Fantasía</h2>
+      <p>
+        Ambos géneros han cautivado la imaginación humana desde tiempos
+        inmemoriales. A través de historias ambientadas en mundos lejanos o
+        universos paralelos, exploran temas profundos como la condición humana,
+        la aventura, la esperanza y la búsqueda constante de lo imposible. En la
+        ciencia ficción, la tecnología y el futuro de la humanidad toman
+        protagonismo, mientras que en la fantasía, son los reinos mágicos, las
+        leyendas y las criaturas mitológicas las que nos sumergen en universos
+        llenos de asombro.
+      </p>
+    </section>
+
+    <!-- ================================
+       GALERÍA CINEMATOGRÁFICA (GRID AVANZADO)
+       ================================ -->
+    <section class="galeria-container" id="galeria">
+      <h2>Galería Cinematográfica</h2>
+      <div class="galeria">
+        <div class="item1">
+          <img
+            src="https://i.ebayimg.com/images/g/8ykAAOSwg-BfTLqg/s-l1200.jpg"
+            alt="Galería 1"
+          />
+        </div>
+        <div class="item2">
+          <img
+            src="https://img.aullidos.com/imagenes/caratulas/dungeons-dragons-honor-ladrones-poster-2.jpg"
+            alt="Galería 2"
+          />
+        </div>
+        <div class="item3">
+          <img
+            src="https://lh5.googleusercontent.com/proxy/_gQQFoBZ1vHEY_w5EmOd9eXRUH9Q2BvFhaL8BjEphpNtuCBd5FqIuG46NmWEIWHNTkRAQU5ktGgwm8IAXVqlTIBOksj4MmPeiTQqZcUq2CbXli4gNYEb"
+            alt="Galería 3"
+          />
+        </div>
+        <div class="item4">
+          <img
+            src="https://i.ebayimg.com/images/g/8ykAAOSwg-BfTLqg/s-l1200.jpg"
+            alt="Galería 4"
+          />
+        </div>
+        <div class="item5">
+          <img
+            src="https://img.aullidos.com/imagenes/caratulas/dungeons-dragons-honor-ladrones-poster-2.jpg"
+            alt="Galería 5"
+          />
+        </div>
+      </div>
+    </section>
+
+    <!-- ================================
+       RECOMENDACIONES (FLEX AVANZADO)
+       ================================ -->
+    <section class="recomendaciones-container" id="recomendaciones">
+      <h2>Recomendaciones Especiales</h2>
+      <div class="recomendaciones">
+        <!-- Recomendación 1 -->
+        <div class="recomendacion">
+          <img
+            src="https://img.aullidos.com/imagenes/caratulas/dungeons-dragons-honor-ladrones-poster-2.jpg"
+            alt="Carátula Recomendación 1"
+          />
+          <h3>Planeta Oculto</h3>
+          <p>
+            Un fascinante viaje a un planeta gobernado por una monarquía
+            ancestral que mantiene el equilibrio con místicas criaturas. ¿Podrás
+            descubrir sus secretos?
+          </p>
+        </div>
+
+        <!-- Recomendación 2 -->
+        <div class="recomendacion">
+          <img
+            src="https://img.aullidos.com/imagenes/caratulas/dungeons-dragons-honor-ladrones-poster-2.jpg"
+            alt="Carátula Recomendación 2"
+          />
+          <h3>Crónicas del Tiempo</h3>
+          <p>
+            Cuando un científico descubre la forma de viajar al pasado, las
+            consecuencias para el futuro resultan inesperadas. Una mezcla de
+            acción y dilemas éticos.
+          </p>
+        </div>
+
+        <!-- Recomendación 3 -->
+        <div class="recomendacion">
+          <img
+            src="https://i.ebayimg.com/images/g/8ykAAOSwg-BfTLqg/s-l1200.jpg"
+            alt="Carátula Recomendación 3"
+          />
+          <h3>Sombras de la Magia</h3>
+          <p>
+            Tres reinos en guerra, un antiguo hechizo y una profecía que pondrá
+            a prueba la lealtad de todos. ¿Quién dominará las sombras?
+          </p>
+        </div>
+
+        <!-- Recomendación 4 -->
+        <div class="recomendacion">
+          <img
+            src="https://i.ebayimg.com/images/g/8ykAAOSwg-BfTLqg/s-l1200.jpg"
+            alt="Carátula Recomendación 4"
+          />
+          <h3>La Guerra de los Titanes</h3>
+          <p>
+            En una galaxia distante, dioses y titanes luchan por la supremacía,
+            mientras la humanidad se ve atrapada en medio del caos cósmico.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================================
+       FOOTER
+       ================================ -->
+    <footer>
+      <p>© 2025 Universo Sci-Fi & Fantasía. Todos los derechos reservados.</p>
+    </footer>
+  </body>
+</html>

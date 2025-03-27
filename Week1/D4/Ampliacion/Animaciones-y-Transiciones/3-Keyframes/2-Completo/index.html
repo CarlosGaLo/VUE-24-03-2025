@@ -1,0 +1,873 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Películas de Ciencia Ficción y Fantasía</title>
+    <style>
+      /* ================================
+         VARIABLES DE ESTILO
+         ================================ */
+      :root {
+        --color-primario: #1e1e2f;
+        --color-secundario: #2c2c44;
+        --color-terciario: #33334a;
+        --color-acento: #e76f51;
+        --color-texto: #f4f4f4;
+        --color-texto-secundario: #cccccc;
+        --fuente-primaria: Arial, Helvetica, sans-serif;
+      }
+
+      /* ================================
+         RESETEO BÁSICO
+         ================================ */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      /* ================================
+         ESTILOS GENERALES
+         ================================ */
+      body {
+        font-family: var(--fuente-primaria);
+        background: linear-gradient(120deg, #15151f, #212139);
+        color: var(--color-texto);
+        line-height: 1.6;
+
+        /* Animación de entrada de la página */
+        opacity: 0; /* Para iniciar en transparencia */
+        animation: fadeInPage 1.5s ease-in-out forwards;
+      }
+
+      h1,
+      h2,
+      h3,
+      h4,
+      h5 {
+        margin-bottom: 0.5rem;
+      }
+
+      p {
+        margin-bottom: 1rem;
+      }
+
+      /* Enlaces de navegación */
+      a {
+        text-decoration: none;
+        color: var(--color-texto);
+        transition: color 0.3s ease;
+      }
+      a:hover {
+        color: var(--color-acento);
+      }
+
+      /* ================================
+         KEYFRAMES PARA ANIMACIONES
+         ================================ */
+      @keyframes fadeInPage {
+        0% {
+          opacity: 0;
+        }
+        100% {
+          opacity: 1;
+        }
+      }
+
+      @keyframes slideInDown {
+        0% {
+          transform: translateY(-20px);
+          opacity: 0;
+        }
+        100% {
+          transform: translateY(0);
+          opacity: 1;
+        }
+      }
+
+      @keyframes hoverBounce {
+        0% {
+          transform: scale(1);
+        }
+        50% {
+          transform: scale(1.05);
+        }
+        100% {
+          transform: scale(1);
+        }
+      }
+
+      /* 
+        Rotación para flip
+      */
+      @keyframes flipCard {
+        0% {
+          transform: rotateY(0deg);
+        }
+        50% {
+          transform: rotateY(90deg);
+        }
+        100% {
+          transform: rotateY(180deg);
+        }
+      }
+
+      /* Card 3D Flip - front & back */
+      .flip-card {
+        perspective: 1000px; /* Controla la distancia 3D */
+      }
+      .flip-card-inner {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        transition: transform 1s;
+        transform-style: preserve-3d;
+      }
+      .flip-card:hover .flip-card-inner {
+        transform: rotateY(180deg);
+      }
+      .flip-card-front,
+      .flip-card-back {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        backface-visibility: hidden; /* Oculta la cara posterior */
+      }
+      .flip-card-front {
+        z-index: 2;
+      }
+      .flip-card-back {
+        transform: rotateY(180deg);
+        z-index: 1;
+      }
+
+      /* ================================
+         HEADER
+         ================================ */
+      header {
+        background-color: var(--color-primario);
+        padding: 1.5rem;
+      }
+
+      header h1 {
+        text-align: center;
+        font-size: 2.2rem;
+        letter-spacing: 2px;
+      }
+
+      nav {
+        display: flex; /* Uso de flex */
+        justify-content: center;
+        margin-top: 1rem;
+      }
+
+      nav ul {
+        display: flex;
+        list-style: none;
+        gap: 1.5rem;
+      }
+
+      /* Pequeña animación en links de navegación al pasar el mouse */
+      nav ul li a {
+        position: relative;
+      }
+      nav ul li a::after {
+        content: "";
+        position: absolute;
+        bottom: -2px;
+        left: 0;
+        width: 0%;
+        height: 2px;
+        background: var(--color-acento);
+        transition: width 0.3s ease;
+      }
+      nav ul li a:hover::after {
+        width: 100%;
+      }
+
+      /* ================================
+         HERO
+         ================================ */
+      .hero {
+        background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+          url("https://img.aullidos.com/imagenes/caratulas/dungeons-dragons-honor-ladrones-poster-2.jpg");
+        background-size: cover;
+        background-position: center;
+        padding: 4rem 2rem;
+        text-align: center;
+
+        /* Animación de entrada en cascada */
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .hero h2 {
+        font-size: 2rem;
+        margin-bottom: 1rem;
+        animation: slideInDown 1.2s ease forwards;
+      }
+
+      .hero p {
+        font-size: 1.1rem;
+        color: var(--color-texto-secundario);
+        max-width: 600px;
+        margin: 0 auto;
+        animation: slideInDown 1.5s ease forwards;
+      }
+
+      /* ================================
+         PELÍCULAS DESTACADAS (GRID)
+         ================================ */
+      .peliculas-destacadas {
+        background-color: var(--color-secundario);
+        padding: 3rem 2rem;
+      }
+
+      .peliculas-destacadas h2 {
+        text-align: center;
+        margin-bottom: 2rem;
+        font-size: 1.8rem;
+      }
+
+      .grid-peliculas {
+        display: grid; /* Uso de grid */
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 2rem;
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+
+      /* 
+         Ejemplo de flip en la primera tarjeta:
+         Podemos crear un contenedor .flip-card para la animación 
+         y front/back para la parte visual
+       */
+      .grid-peliculas .flip-card {
+        background-color: var(--color-terciario);
+        border-radius: 8px;
+        overflow: hidden;
+        transition: transform 0.3s ease;
+        display: flex;
+        flex-direction: column;
+      }
+
+      .grid-peliculas .flip-card:hover {
+        cursor: pointer;
+      }
+
+      /* Ajuste interno de la tarjeta flip */
+      .grid-peliculas .flip-card-inner {
+        width: 100%;
+        height: 100%;
+      }
+
+      .flip-card-front img {
+        width: 100%;
+        height: 300px;
+        object-fit: cover;
+        display: block;
+      }
+
+      .flip-card-front h3 {
+        font-size: 1.2rem;
+        padding: 1rem;
+      }
+
+      .flip-card-front p {
+        padding: 0 1rem 1rem;
+        color: var(--color-texto-secundario);
+      }
+
+      .flip-card-back {
+        background: var(--color-primario);
+        color: var(--color-texto);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        border-radius: 8px;
+        padding: 1rem;
+      }
+
+      /* Tarjetas normales (sin flip) */
+      .grid-peliculas article:not(.flip-card) {
+        background-color: var(--color-terciario);
+        border-radius: 8px;
+        overflow: hidden;
+        transition: transform 0.3s ease;
+        display: flex;
+        flex-direction: column;
+      }
+      .grid-peliculas article:not(.flip-card):hover {
+        /* Añadimos un leve 'bounce' con keyframe */
+        animation: hoverBounce 0.5s linear;
+        cursor: pointer;
+      }
+      .grid-peliculas article:not(.flip-card) img {
+        width: 100%;
+        height: 300px;
+        object-fit: cover;
+      }
+      .grid-peliculas article:not(.flip-card) h3 {
+        font-size: 1.2rem;
+        padding: 1rem;
+      }
+      .grid-peliculas article:not(.flip-card) p {
+        padding: 0 1rem 1rem;
+        color: var(--color-texto-secundario);
+        flex: 1;
+      }
+
+      /* ================================
+         PRÓXIMOS ESTRENOS (FLEX)
+         ================================ */
+      .proximos-container {
+        background-color: #222232;
+        padding: 3rem 2rem;
+      }
+
+      .proximos-container h2 {
+        text-align: center;
+        margin-bottom: 2rem;
+        font-size: 1.8rem;
+      }
+
+      .proximos-estrenos {
+        display: flex; /* Uso de flex */
+        flex-wrap: wrap;
+        gap: 2rem;
+        max-width: 1200px;
+        margin: 0 auto;
+        justify-content: space-evenly;
+      }
+
+      .proximos-estrenos .estreno {
+        flex: 1 1 300px;
+        background-color: var(--color-primario);
+        margin: 0.5rem;
+        border-radius: 8px;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+
+        /* transiciones suaves */
+        transform: scale(1);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+
+      .proximos-estrenos .estreno:hover {
+        transform: scale(1.03);
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+        cursor: pointer;
+      }
+
+      .proximos-estrenos img {
+        width: 100%;
+        height: 250px;
+        object-fit: cover;
+      }
+
+      .proximos-estrenos h4 {
+        font-size: 1.3rem;
+        margin-top: 1rem;
+        margin-left: 1rem;
+      }
+
+      .proximos-estrenos p {
+        margin: 0.5rem 1rem 1rem;
+        color: var(--color-texto-secundario);
+        flex: 1;
+      }
+
+      /* ================================
+         SOBRE EL GÉNERO
+         ================================ */
+      .sobre-seccion {
+        background-color: #2a2a3a;
+        padding: 3rem 2rem;
+      }
+
+      .sobre-seccion h2 {
+        text-align: center;
+        margin-bottom: 2rem;
+        font-size: 1.8rem;
+      }
+
+      .sobre-seccion p {
+        max-width: 800px;
+        margin: 0 auto;
+        text-align: center;
+        color: var(--color-texto-secundario);
+        line-height: 1.8;
+      }
+
+      /* ================================
+         GALERÍA CINEMATOGRÁFICA (GRID AVANZADO)
+         ================================ */
+      .galeria-container {
+        background-color: var(--color-secundario);
+        padding: 3rem 2rem;
+        /* simple backdrop to differentiate */
+      }
+
+      .galeria-container h2 {
+        text-align: center;
+        margin-bottom: 2rem;
+        font-size: 1.8rem;
+      }
+
+      .galeria {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: 200px 200px 200px;
+        grid-gap: 1rem;
+        max-width: 1200px;
+        margin: 0 auto;
+        grid-template-areas:
+          "item1 item1 item2"
+          "item3 item4 item2"
+          "item3 item4 item5";
+      }
+
+      /* Asignación de áreas */
+      .galeria .item1 {
+        grid-area: item1;
+      }
+      .galeria .item2 {
+        grid-area: item2;
+      }
+      .galeria .item3 {
+        grid-area: item3;
+      }
+      .galeria .item4 {
+        grid-area: item4;
+      }
+      .galeria .item5 {
+        grid-area: item5;
+      }
+
+      .galeria div {
+        background-color: var(--color-terciario);
+        border-radius: 8px;
+        overflow: hidden;
+        position: relative;
+        transition: transform 0.3s ease;
+      }
+
+      .galeria div:hover {
+        transform: scale(1.03) rotate(1deg);
+        cursor: pointer;
+      }
+
+      .galeria div img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+      }
+
+      /* ================================
+         RECOMENDACIONES (FLEX AVANZADO)
+         ================================ */
+      .recomendaciones-container {
+        background-color: #1e1e2f;
+        padding: 3rem 2rem;
+      }
+
+      .recomendaciones-container h2 {
+        text-align: center;
+        margin-bottom: 2rem;
+        font-size: 1.8rem;
+      }
+
+      .recomendaciones {
+        display: flex;
+        flex-direction: row; /* horizontal */
+        flex-wrap: wrap;
+        justify-content: space-around;
+        max-width: 1200px;
+        margin: 0 auto;
+        gap: 2rem;
+      }
+
+      .recomendacion {
+        background-color: var(--color-primario);
+        border-radius: 8px;
+        overflow: hidden;
+        flex: 1 1 300px;
+        min-width: 280px;
+        max-width: 350px;
+        display: flex;
+        flex-direction: column;
+        transition: transform 0.3s;
+        position: relative;
+      }
+
+      .recomendacion:hover {
+        transform: translateY(-5px);
+        cursor: pointer;
+      }
+
+      .recomendacion img {
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+      }
+
+      .recomendacion h3 {
+        font-size: 1.2rem;
+        margin: 1rem;
+      }
+
+      .recomendacion p {
+        margin: 0 1rem 1rem;
+        color: var(--color-texto-secundario);
+        flex: 1;
+      }
+
+      /* Ejemplo de una sección flip en las recomendaciones 
+         para mostrar info adicional en el reverso
+         (Vamos a hacerlo en la última tarjeta, por ejemplo)
+      */
+      .recomendacion.flip {
+        perspective: 1000px;
+      }
+      .recomendacion.flip .flip-card-inner {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        transition: transform 1s;
+        transform-style: preserve-3d;
+      }
+      .recomendacion.flip:hover .flip-card-inner {
+        transform: rotateY(180deg);
+      }
+      .recomendacion.flip .flip-card-front,
+      .recomendacion.flip .flip-card-back {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        backface-visibility: hidden;
+      }
+      .recomendacion.flip .flip-card-front {
+        z-index: 2;
+        background-color: var(--color-primario);
+      }
+      .recomendacion.flip .flip-card-back {
+        background-color: var(--color-terciario);
+        transform: rotateY(180deg);
+        color: var(--color-texto);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .flip-card-back h3 {
+        margin-bottom: 0.5rem;
+      }
+      .flip-card-back p {
+        margin: 0 1rem;
+        color: var(--color-texto-secundario);
+      }
+
+      /* ================================
+         FOOTER
+         ================================ */
+      footer {
+        background-color: var(--color-primario);
+        padding: 1.5rem;
+        text-align: center;
+        margin-top: 2rem;
+      }
+
+      footer p {
+        color: var(--color-texto-secundario);
+        font-size: 0.9rem;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- ================================
+         HEADER
+         ================================ -->
+    <header>
+      <h1>Universo Sci-Fi & Fantasía</h1>
+      <nav>
+        <ul>
+          <li><a href="#peliculas">Películas Destacadas</a></li>
+          <li><a href="#proximos">Próximos Estrenos</a></li>
+          <li><a href="#sobre">Sobre el Género</a></li>
+          <li><a href="#galeria">Galería</a></li>
+          <li><a href="#recomendaciones">Recomendaciones</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <!-- ================================
+         HERO
+         ================================ -->
+    <section class="hero">
+      <h2>Explora Mundos Increíbles</h2>
+      <p>
+        Viaja más allá de nuestro universo, adéntrate en reinos mágicos,
+        descubre tecnología futurista y revive épicas batallas de espada y
+        hechicería. ¡Las posibilidades son infinitas!
+      </p>
+    </section>
+
+    <!-- ================================
+         PELÍCULAS DESTACADAS (GRID)
+         ================================ -->
+    <section class="peliculas-destacadas" id="peliculas">
+      <h2>Películas Destacadas</h2>
+      <div class="grid-peliculas">
+        <!-- Ejemplo de flip card en la primera película -->
+        <article class="flip-card">
+          <div class="flip-card-inner">
+            <!-- Cara frontal -->
+            <div class="flip-card-front">
+              <img
+                src="https://lh5.googleusercontent.com/proxy/_gQQFoBZ1vHEY_w5EmOd9eXRUH9Q2BvFhaL8BjEphpNtuCBd5FqIuG46NmWEIWHNTkRAQU5ktGgwm8IAXVqlTIBOksj4MmPeiTQqZcUq2CbXli4gNYEb"
+                alt="Película 1"
+              />
+              <h3>El Imperio de las Estrellas</h3>
+              <p>
+                Una épica aventura galáctica donde un joven héroe debe alzarse
+                contra un régimen autoritario que controla toda la galaxia.
+              </p>
+            </div>
+            <!-- Cara trasera -->
+            <div class="flip-card-back">
+              <h3>¡Sorpresa!</h3>
+              <p>
+                En el reverso de la carta, más información detallada de la
+                película, curiosidades o incluso detalles de producción.
+              </p>
+            </div>
+          </div>
+        </article>
+
+        <!-- Tarjetas normales (sin flip) -->
+        <article>
+          <img
+            src="https://i.ebayimg.com/images/g/8ykAAOSwg-BfTLqg/s-l1200.jpg"
+            alt="Película 2"
+          />
+          <h3>El Bosque Encantado</h3>
+          <p>
+            En un mundo donde la magia fluye entre los árboles, un grupo de
+            aventureros se enfrenta a un antiguo mal despertado en la
+            profundidad del bosque.
+          </p>
+        </article>
+
+        <article>
+          <img
+            src="https://img.aullidos.com/imagenes/caratulas/dungeons-dragons-honor-ladrones-poster-2.jpg"
+            alt="Película 3"
+          />
+          <h3>Futuro Artificial</h3>
+          <p>
+            La Tierra ha evolucionado hacia una sociedad dominada por
+            inteligencia artificial, mientras un grupo de rebeldes lucha por
+            preservar la humanidad.
+          </p>
+        </article>
+
+        <article>
+          <img
+            src="https://lh5.googleusercontent.com/proxy/_gQQFoBZ1vHEY_w5EmOd9eXRUH9Q2BvFhaL8BjEphpNtuCBd5FqIuG46NmWEIWHNTkRAQU5ktGgwm8IAXVqlTIBOksj4MmPeiTQqZcUq2CbXli4gNYEb"
+            alt="Película 4"
+          />
+          <h3>La Corona Dragón</h3>
+          <p>
+            La historia de un príncipe exiliado que debe formar una alianza con
+            una raza de dragones milenarios para recuperar su reino.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <!-- ================================
+         PRÓXIMOS ESTRENOS (FLEX)
+         ================================ -->
+    <section class="proximos-container" id="proximos">
+      <h2>Próximos Estrenos</h2>
+      <div class="proximos-estrenos">
+        <div class="estreno">
+          <img
+            src="https://i.ebayimg.com/images/g/8ykAAOSwg-BfTLqg/s-l1200.jpg"
+            alt="Próximo Estreno 1"
+          />
+          <h4>Galaxia Perdida</h4>
+          <p>
+            Una expedición a los confines de la galaxia conduce a un
+            descubrimiento que cambiará el curso de la historia.
+          </p>
+        </div>
+        <div class="estreno">
+          <img
+            src="https://lh5.googleusercontent.com/proxy/_gQQFoBZ1vHEY_w5EmOd9eXRUH9Q2BvFhaL8BjEphpNtuCBd5FqIuG46NmWEIWHNTkRAQU5ktGgwm8IAXVqlTIBOksj4MmPeiTQqZcUq2CbXli4gNYEb"
+            alt="Próximo Estreno 2"
+          />
+          <h4>El Reino de Hielo</h4>
+          <p>
+            En un mundo congelado, una princesa guerrera busca la legendaria
+            forja de fuego para salvar su reino.
+          </p>
+        </div>
+        <div class="estreno">
+          <img
+            src="https://img.aullidos.com/imagenes/caratulas/dungeons-dragons-honor-ladrones-poster-2.jpg"
+            alt="Próximo Estreno 3"
+          />
+          <h4>Ciudad Virtual</h4>
+          <p>
+            La realidad y la simulación se fusionan cuando un hacker se adentra
+            en una metrópolis digital llena de secretos.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================================
+         SOBRE EL GÉNERO
+         ================================ -->
+    <section class="sobre-seccion" id="sobre">
+      <h2>Sobre la Ciencia Ficción y Fantasía</h2>
+      <p>
+        Ambos géneros han cautivado la imaginación humana desde tiempos
+        inmemoriales. A través de historias ambientadas en mundos lejanos o
+        universos paralelos, exploran temas profundos como la condición humana,
+        la aventura, la esperanza y la búsqueda constante de lo imposible. En la
+        ciencia ficción, la tecnología y el futuro de la humanidad toman
+        protagonismo, mientras que en la fantasía, son los reinos mágicos, las
+        leyendas y las criaturas mitológicas las que nos sumergen en universos
+        llenos de asombro.
+      </p>
+    </section>
+
+    <!-- ================================
+         GALERÍA CINEMATOGRÁFICA (GRID AVANZADO)
+         ================================ -->
+    <section class="galeria-container" id="galeria">
+      <h2>Galería Cinematográfica</h2>
+      <div class="galeria">
+        <div class="item1">
+          <img
+            src="https://i.ebayimg.com/images/g/8ykAAOSwg-BfTLqg/s-l1200.jpg"
+            alt="Galería 1"
+          />
+        </div>
+        <div class="item2">
+          <img
+            src="https://img.aullidos.com/imagenes/caratulas/dungeons-dragons-honor-ladrones-poster-2.jpg"
+            alt="Galería 2"
+          />
+        </div>
+        <div class="item3">
+          <img
+            src="https://lh5.googleusercontent.com/proxy/_gQQFoBZ1vHEY_w5EmOd9eXRUH9Q2BvFhaL8BjEphpNtuCBd5FqIuG46NmWEIWHNTkRAQU5ktGgwm8IAXVqlTIBOksj4MmPeiTQqZcUq2CbXli4gNYEb"
+            alt="Galería 3"
+          />
+        </div>
+        <div class="item4">
+          <img
+            src="https://i.ebayimg.com/images/g/8ykAAOSwg-BfTLqg/s-l1200.jpg"
+            alt="Galería 4"
+          />
+        </div>
+        <div class="item5">
+          <img
+            src="https://img.aullidos.com/imagenes/caratulas/dungeons-dragons-honor-ladrones-poster-2.jpg"
+            alt="Galería 5"
+          />
+        </div>
+      </div>
+    </section>
+
+    <!-- ================================
+         RECOMENDACIONES (FLEX AVANZADO)
+         ================================ -->
+    <section class="recomendaciones-container" id="recomendaciones">
+      <h2>Recomendaciones Especiales</h2>
+      <div class="recomendaciones">
+        <!-- Recomendación 1 -->
+        <div class="recomendacion">
+          <img
+            src="https://img.aullidos.com/imagenes/caratulas/dungeons-dragons-honor-ladrones-poster-2.jpg"
+            alt="Carátula Recomendación 1"
+          />
+          <h3>Planeta Oculto</h3>
+          <p>
+            Un fascinante viaje a un planeta gobernado por una monarquía
+            ancestral que mantiene el equilibrio con místicas criaturas. ¿Podrás
+            descubrir sus secretos?
+          </p>
+        </div>
+
+        <!-- Recomendación 2 -->
+        <div class="recomendacion">
+          <img
+            src="https://img.aullidos.com/imagenes/caratulas/dungeons-dragons-honor-ladrones-poster-2.jpg"
+            alt="Carátula Recomendación 2"
+          />
+          <h3>Crónicas del Tiempo</h3>
+          <p>
+            Cuando un científico descubre la forma de viajar al pasado, las
+            consecuencias para el futuro resultan inesperadas. Una mezcla de
+            acción y dilemas éticos.
+          </p>
+        </div>
+
+        <!-- Recomendación 3 -->
+        <div class="recomendacion">
+          <img
+            src="https://i.ebayimg.com/images/g/8ykAAOSwg-BfTLqg/s-l1200.jpg"
+            alt="Carátula Recomendación 3"
+          />
+          <h3>Sombras de la Magia</h3>
+          <p>
+            Tres reinos en guerra, un antiguo hechizo y una profecía que pondrá
+            a prueba la lealtad de todos. ¿Quién dominará las sombras?
+          </p>
+        </div>
+
+        <!-- Recomendación 4 (flip card) -->
+        <div class="recomendacion flip">
+          <div class="flip-card-inner">
+            <!-- Cara frontal -->
+            <div class="flip-card-front">
+              <img
+                src="https://i.ebayimg.com/images/g/8ykAAOSwg-BfTLqg/s-l1200.jpg"
+                alt="Carátula Recomendación 4"
+              />
+              <h3>La Guerra de los Titanes</h3>
+              <p style="margin: 0 1rem 1rem; color: var(--color-texto-secundario);">
+                En una galaxia distante, dioses y titanes luchan por la supremacía,
+                mientras la humanidad se ve atrapada en medio del caos cósmico.
+              </p>
+            </div>
+            <!-- Cara trasera -->
+            <div class="flip-card-back">
+              <h3>Descubre Más</h3>
+              <p>
+                En esta épica batalla, forja tu propio destino y desvela los
+                secretos que podrían cambiar el rumbo de la historia.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================================
+         FOOTER
+         ================================ -->
+    <footer>
+      <p>© 2025 Universo Sci-Fi & Fantasía. Todos los derechos reservados.</p>
+    </footer>
+  </body>
+</html>

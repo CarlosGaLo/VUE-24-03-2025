@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Transiciones y Animaciones en CSS</title>
+  <style>
+    /* Reset básico */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: "Helvetica Neue", Arial, sans-serif;
+      background-color: #f9f9f9;
+      color: #333;
+      line-height: 1.5;
+      padding: 20px;
+    }
+
+    h1, h2, p {
+      margin-bottom: 10px;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .section {
+      margin-bottom: 40px;
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+
+    .section h2 {
+      margin-bottom: 15px;
+      border-bottom: 2px solid #ddd;
+      padding-bottom: 10px;
+      color: #444;
+    }
+
+    .explanation {
+      margin-bottom: 20px;
+    }
+
+    /* --- Elementos de ejemplo --- */
+    .examples-wrapper {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+    .example-box {
+      flex: 1 1 200px;
+      min-width: 200px;
+      min-height: 120px;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+      color: #fff;
+      text-align: center;
+      transition: all 0.5s ease; /* Para transiciones (si se requiere) */
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* ========== TRANSICIONES ========== */
+    /* 1. Cambio de color de fondo en hover */
+    .transition-color {
+      background-color: #007acc;
+    }
+    .transition-color:hover {
+      background-color: #f44336; /* rojo */
+    }
+
+    /* 2. Desplazamiento en hover (translate) */
+    .transition-translate {
+      background-color: #9c27b0; /* morado */
+    }
+    .transition-translate:hover {
+      transform: translateX(20px);
+    }
+
+    /* 3. Cambio de ancho en hover */
+    .transition-width {
+      background-color: #ff9800; /* naranja */
+      width: 200px;
+    }
+    .transition-width:hover {
+      width: 250px;
+    }
+
+    /* 4. Giro en hover (rotate) */
+    .transition-rotate {
+      background-color: #4caf50; /* verde */
+    }
+    .transition-rotate:hover {
+      transform: rotate(20deg);
+    }
+
+    /* 5. Cambio de borde redondeado en hover */
+    .transition-border {
+      background-color: #795548; /* marrón */
+      border-radius: 0px;
+    }
+    .transition-border:hover {
+      border-radius: 50px;
+    }
+
+    /* ========== ANIMACIONES ========== */
+    /* Definimos algunos @keyframes para varios efectos */
+    @keyframes fadeInOut {
+      0%, 100% { opacity: 0; }
+      50% { opacity: 1; }
+    }
+    @keyframes spin {
+      0% { transform: rotate(0); }
+      100% { transform: rotate(360deg); }
+    }
+    @keyframes bounce {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-30px); }
+    }
+    @keyframes pulse {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.2); }
+    }
+    @keyframes colorChange {
+      0% { background-color: #1abc9c; }
+      25% { background-color: #e67e22; }
+      50% { background-color: #f1c40f; }
+      75% { background-color: #9b59b6; }
+      100% { background-color: #1abc9c; }
+    }
+
+    /* Ahora las clases que aplican cada animación */
+    /* 1. Animación fadeInOut */
+    .animation-fade {
+      animation: fadeInOut 2s ease-in-out infinite;
+      background-color: #607d8b; /* gris azulado */
+    }
+
+    /* 2. Animación spin */
+    .animation-spin {
+      animation: spin 2s linear infinite;
+      background-color: #009688; /* verde azulado */
+    }
+
+    /* 3. Animación bounce */
+    .animation-bounce {
+      animation: bounce 1s ease-in-out infinite;
+      background-color: #f44336; /* rojo */
+    }
+
+    /* 4. Animación pulse */
+    .animation-pulse {
+      animation: pulse 1s ease-in-out infinite;
+      background-color: #3f51b5; /* índigo */
+    }
+
+    /* 5. Animación colorChange */
+    .animation-color-change {
+      animation: colorChange 5s linear infinite;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- EXPLICACIÓN GENERAL -->
+    <div class="section">
+      <h1>Transiciones y Animaciones en CSS</h1>
+      <div class="explanation">
+        <p><strong>Transiciones</strong> (transitions): permiten cambiar gradualmente de un estado a otro en respuesta a un evento (por ejemplo, un <em>hover</em>). Se activan cuando ocurre un cambio en una propiedad CSS. Por ejemplo, al pasar el ratón sobre un elemento se puede modificar su color de fondo, tamaño, posición, etc., y gracias a la transición ese cambio sucede de forma suave.</p>
+        <p>De forma no rigurosa, podemos decir que las transiciones se "lanzan" cuando se da una condición y que sólo afectan a propiedades que pueden recibir valores intermedios.</p>
+        
+        <p><strong>Animaciones</strong> (animations): proporcionan un control más completo de los cambios de estilo a lo largo del tiempo, ya que no necesitan un evento que las dispare. A través de los <code>@keyframes</code> definimos qué cambios se producen y en qué momento, pudiendo repetirlos de forma infinita o controlada. Esto permite efectos más avanzados, como giros continuos, parpadeos, rebotes, etc.</p>
+        <p>De forma no rigurosa, podemos decir que las animaciones son automáticas y pueden afectar a cualquier propiedad, incluso si esta no tiene valores intermedios, como el display.</p>
+      </div>
+    </div>
+
+    <!-- EJEMPLOS DE TRANSICIONES -->
+    <div class="section">
+      <h2>4 Ejemplos de Transiciones</h2>
+      <div class="examples-wrapper">
+
+        <!-- 1. Cambio de color de fondo en hover -->
+        <div class="example-box transition-color">
+          Cambio de color
+        </div>
+
+        <!-- 2. Desplazamiento en hover -->
+        <div class="example-box transition-translate">
+          Desplazamiento
+        </div>
+        <!-- 3. Giro en hover -->
+        <div class="example-box transition-rotate">
+          Giro
+        </div>
+
+        <!-- 4. Cambio de borde redondeado en hover -->
+        <div class="example-box transition-border">
+          Borde redondeado
+        </div>
+
+      </div>
+    </div>
+
+    <!-- EJEMPLOS DE ANIMACIONES -->
+    <div class="section">
+      <h2>5 Ejemplos de Animaciones</h2>
+      <div class="examples-wrapper">
+
+        <!-- 1. Fade In / Out -->
+        <div class="example-box animation-fade">
+          Fade In/Out
+        </div>
+
+        <!-- 2. Spin (rotación continua) -->
+        <div class="example-box animation-spin">
+          Spin
+        </div>
+
+        <!-- 3. Bounce -->
+        <div class="example-box animation-bounce">
+          Bounce
+        </div>
+
+        <!-- 4. Pulse -->
+        <div class="example-box animation-pulse">
+          Pulse
+        </div>
+
+        <!-- 5. Cambio continuo de color de fondo -->
+        <div class="example-box animation-color-change">
+          Color Change
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+</body>
+</html>

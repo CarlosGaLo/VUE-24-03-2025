@@ -1,0 +1,33 @@
+.flex-container {
+  background-color: aqua;
+  height: 1000px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 20px;
+}
+
+.another-flex {
+  background-color: lightcoral;
+  display: flex;
+  width: 300px;
+  align-items: center;
+  justify-content: flex-start;
+  flex-direction: column;
+}
+
+.background {
+  width: 200px;
+  height: 50px;
+  background-color: lightgoldenrodyellow;
+}
+
+.background:nth-child(2) {
+  background-color: blueviolet;
+}
+
+.margin{
+    padding: 30px;
+}

@@ -1,0 +1,46 @@
+.container {
+  animation-name: myslidein;
+  animation-duration: 3s;
+}
+.hexagon {
+  position: relative;
+  width: 100px;
+  height: 57.74px;
+  background-color: #d10000;
+  margin: 28.87px 0;
+}
+
+/*¡No te despistes! before y after se aplican tanto al inicio del box-model como al final.*/
+.hexagon:before,
+.hexagon:after {
+  /*Esta propiedad asigna un contenido vacío a los pseudoelementos. En este caso, no se muestra ningún contenido en los pseudoelementos, pero son necesarios para que los pseudoelementos existan y sean visibles en el DOM.*/
+  content: "";
+  position: absolute;
+  width: 0;
+  /*Sin estas dos líneas de debajo, nuestra forma sería tan solo un rectángulo.*/
+  border-left: 50px solid transparent;
+  border-right: 50px solid transparent;
+}
+
+.hexagon:before {
+  bottom: 100%;
+  border-bottom: 28.87px solid #00d1ae;
+}
+
+.hexagon:after {
+  top: 100%;
+  width: 0;
+  border-top: 28.87px solid #00d1ae;
+}
+
+@keyframes myslidein {
+  0% {
+    margin-left: 100%;
+    width: 300%;
+  }
+
+  100% {
+    margin-left: 0%;
+    width: 100%;
+  }
+}

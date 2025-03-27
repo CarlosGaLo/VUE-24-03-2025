@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Apuntes sobre @Keyframes en CSS</title>
+  <style>
+    /* 
+      Estilos generales para estructurar la página 
+      y resaltar las secciones de ejemplo
+    */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+      background: #f9f9f9;
+      color: #333;
+    }
+    h1, h2, h3 {
+      color: #2c3e50;
+    }
+    .container {
+      background: #fff;
+      border: 1px solid #ddd;
+      padding: 15px;
+      margin-bottom: 20px;
+      box-shadow: 0 0 5px rgba(0,0,0,0.1);
+    }
+    .exampleBox {
+      width: 100px;
+      height: 100px;
+      margin: 20px 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: #fff;
+      font-weight: bold;
+      border-radius: 5px;
+    }
+
+    /* =========================================================================
+       EJEMPLO 1: Cambio de color simple
+       ========================================================================= */
+    .example1 {
+      background: #e74c3c; /* Rojo */
+      animation: changeColor 3s infinite alternate;
+    }
+    @keyframes changeColor {
+      0% {
+        background: #e74c3c; /* Rojo */
+      }
+      100% {
+        background: #3498db; /* Azul */
+      }
+    }
+
+    /* =========================================================================
+       EJEMPLO 2: Desplazamiento horizontal
+       ========================================================================= */
+    .example2 {
+      background: #2ecc71; /* Verde */
+      position: relative;
+      animation: moveRight 2s infinite alternate;
+    }
+    @keyframes moveRight {
+      0% {
+        left: 0;
+      }
+      100% {
+        left: 200px;
+      }
+    }
+
+    /* =========================================================================
+       EJEMPLO 3: Escala (zoom in y zoom out)
+       ========================================================================= */
+    .example3 {
+      background: #9b59b6; /* Morado */
+      animation: scaleBox 2s infinite alternate;
+    }
+    @keyframes scaleBox {
+      0% {
+        transform: scale(1);
+      }
+      100% {
+        transform: scale(1.5);
+      }
+    }
+
+    /* =========================================================================
+       EJEMPLO 4: Rotación
+       ========================================================================= */
+    .example4 {
+      background: #f39c12; /* Naranja */
+      animation: rotateBox 2s linear infinite;
+    }
+    @keyframes rotateBox {
+      from {
+        transform: rotate(0deg);
+      }
+      to {
+        transform: rotate(360deg);
+      }
+    }
+
+    /* =========================================================================
+       EJEMPLO 5: Cambio de color en múltiples pasos
+       ========================================================================= */
+    .example5 {
+      background: #1abc9c; /* Turquesa */
+      animation: multiColor 4s infinite;
+    }
+    @keyframes multiColor {
+      0% {
+        background: #1abc9c; /* Turquesa */
+      }
+      25% {
+        background: #e67e22; /* Naranja */
+      }
+      50% {
+        background: #34495e; /* Azul oscuro */
+      }
+      75% {
+        background: #e74c3c; /* Rojo */
+      }
+      100% {
+        background: #1abc9c; /* Turquesa */
+      }
+    }
+
+    /* =========================================================================
+       EJEMPLO 6: Rebote infinito
+       ========================================================================= */
+    .example6 {
+      background: #2c3e50; /* Azul oscuro */
+      animation: bounceBox 2s infinite;
+      position: relative;
+    }
+    @keyframes bounceBox {
+      0%, 100% {
+        top: 0;
+      }
+      50% {
+        top: -40px;
+      }
+    }
+
+    /* =========================================================================
+       EJEMPLO 7: Parpadeo de texto
+       ========================================================================= */
+    .example7 {
+      background: #c0392b; /* Rojo oscuro */
+      font-size: 16px;
+      animation: blinkText 1s infinite;
+    }
+    @keyframes blinkText {
+      0%, 100% {
+        color: #fff;
+      }
+      50% {
+        color: #000;
+      }
+    }
+
+    /* =========================================================================
+       EJEMPLO 8: Cambiar color del borde
+       ========================================================================= */
+    .example8 {
+      background: #34495e; /* Azul grisáceo */
+      border: 5px solid #34495e;
+      animation: borderColorChange 3s infinite alternate;
+    }
+    @keyframes borderColorChange {
+      0% {
+        border-color: #34495e;
+      }
+      100% {
+        border-color: #e74c3c;
+      }
+    }
+
+    /* =========================================================================
+       EJEMPLO 9: Rotación continua y más lenta
+       ========================================================================= */
+    .example9 {
+      background: #16a085; /* Verde azulado */
+      animation: slowRotate 6s linear infinite;
+    }
+    @keyframes slowRotate {
+      0% {
+        transform: rotate(0deg);
+      }
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+
+    /* =========================================================================
+       EJEMPLO 10: Combinación de desplazamiento y escala
+       ========================================================================= */
+    .example10 {
+      background: #8e44ad; /* Morado oscuro */
+      animation: moveScale 3s infinite alternate;
+      position: relative;
+    }
+    @keyframes moveScale {
+      0% {
+        transform: scale(1);
+        left: 0;
+      }
+      100% {
+        transform: scale(1.5);
+        left: 150px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- 
+    =============================
+    PARTE TEÓRICA 
+    =============================
+  -->
+  <section class="container">
+    <h1>@Keyframes en CSS</h1>
+    <p>
+      La regla <strong>@keyframes</strong> en CSS se utiliza para definir los cambios de estilo que 
+      tendrá un elemento en diferentes etapas de una animación. Se combinan con la propiedad 
+      <code>animation</code> (y sus propiedades asociadas, como <code>animation-duration</code>, 
+      <code>animation-timing-function</code>, <code>animation-delay</code>, etc.) para dar vida 
+      a transiciones dinámicas en los elementos de una página web.
+    </p>
+    <p>
+      La sintaxis básica de <strong>@keyframes</strong> es:
+    </p>
+    <pre><code>
+@keyframes nombreAnimacion {
+  0%   { /* Estilos al inicio de la animación */ }
+  50%  { /* Estilos a la mitad de la animación */ }
+  100% { /* Estilos al final de la animación */ }
+}
+    </code></pre>
+    <p>
+      Una vez definido el nombre de la animación con <strong>@keyframes</strong>, 
+      se asocia a un elemento con:
+    </p>
+    <pre><code>
+.elemento {
+  animation-name: nombreAnimacion;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  /* ... y otras propiedades de la animación ... */
+}
+    </code></pre>
+    <p>
+      De forma abreviada, se puede utilizar la propiedad <code>animation</code>:
+    </p>
+    <pre><code>
+.elemento {
+  animation: nombreAnimacion 2s infinite alternate;
+}
+    </code></pre>
+    <p>
+      A continuación, veremos 10 ejemplos distintos que ilustran diferentes usos y 
+      combinaciones de <strong>@keyframes</strong> y la propiedad <code>animation</code>.
+    </p>
+  </section>
+
+  <!-- 
+    =============================
+    EJEMPLOS 
+    =============================
+  -->
+  <section class="container">
+    <h2>Ejemplo 1: Cambio de color simple</h2>
+    <p>Este ejemplo alterna el color de fondo de rojo a azul constantemente.</p>
+    <div class="exampleBox example1">1</div>
+  </section>
+
+  <section class="container">
+    <h2>Ejemplo 2: Desplazamiento horizontal</h2>
+    <p>El elemento se desplaza de izquierda a derecha dentro de su contenedor.</p>
+    <div class="exampleBox example2">2</div>
+  </section>
+
+  <section class="container">
+    <h2>Ejemplo 3: Escala (zoom in y zoom out)</h2>
+    <p>El cuadro crece y se reduce en tamaño de forma alterna.</p>
+    <div class="exampleBox example3">3</div>
+  </section>
+
+  <section class="container">
+    <h2>Ejemplo 4: Rotación</h2>
+    <p>El elemento rota en 360 grados de forma continua.</p>
+    <div class="exampleBox example4">4</div>
+  </section>
+
+  <section class="container">
+    <h2>Ejemplo 5: Cambio de color en múltiples pasos</h2>
+    <p>El elemento pasa por varios colores durante la duración de la animación.</p>
+    <div class="exampleBox example5">5</div>
+  </section>
+
+  <section class="container">
+    <h2>Ejemplo 6: Rebote infinito</h2>
+    <p>El cuadro sube y baja simulando un efecto de rebote.</p>
+    <div class="exampleBox example6">6</div>
+  </section>
+
+  <section class="container">
+    <h2>Ejemplo 7: Parpadeo de texto</h2>
+    <p>El color del texto parpadea entre blanco y negro.</p>
+    <div class="exampleBox example7">7</div>
+  </section>
+
+  <section class="container">
+    <h2>Ejemplo 8: Cambiar color del borde</h2>
+    <p>El borde del cuadro cambia de un color a otro.</p>
+    <div class="exampleBox example8">8</div>
+  </section>
+
+  <section class="container">
+    <h2>Ejemplo 9: Rotación continua y más lenta</h2>
+    <p>El cuadro rota de forma continua pero a una velocidad más lenta que el ejemplo 4.</p>
+    <div class="exampleBox example9">9</div>
+  </section>
+
+  <section class="container">
+    <h2>Ejemplo 10: Combinación de desplazamiento y escala</h2>
+    <p>El elemento se desplaza a la derecha mientras cambia su escala.</p>
+    <div class="exampleBox example10">10</div>
+  </section>
+</body>
+</html>
