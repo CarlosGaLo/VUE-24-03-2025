@@ -1,0 +1,9 @@
+p {
+    color: green;
+}
+
+.cuadrado {
+    width: 100px;
+    height: 100px;
+    background-color: red;
+}

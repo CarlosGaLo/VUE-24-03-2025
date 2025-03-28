@@ -1,0 +1,211 @@
+{
+  "personajes": [
+    {
+      "nombre": "Zeus",
+      "mitologia": "Griega",
+      "descripcion": "Rey de los dioses, gobernante del Monte Olimpo y dios del cielo, el rayo y el trueno.",
+      "grado": "Dios",
+      "primera_aparicion": "Teogonía de Hesíodo",
+      "id": "fe23"
+    },
+    {
+      "nombre": "Odín",
+      "mitologia": "Nórdica",
+      "descripcion": "Padre de los dioses nórdicos, dios de la sabiduría, la poesía, la guerra y la muerte.",
+      "grado": "Dios",
+      "primera_aparicion": "Völuspá",
+      "id": "7f6a"
+    },
+    {
+      "nombre": "Atenea",
+      "mitologia": "Griega",
+      "descripcion": "Diosa de la sabiduría, la estrategia en la guerra, las artes, la justicia y la habilidad.",
+      "grado": "Diosa",
+      "primera_aparicion": "Teogonía de Hesíodo",
+      "id": "52de"
+    },
+    {
+      "nombre": "Artemisa",
+      "mitologia": "Griega",
+      "descripcion": "Diosa de la caza, la naturaleza salvaje, la virginidad, la luz lunar y el parto.",
+      "grado": "Diosa",
+      "primera_aparicion": "Homero, Himnos homéricos",
+      "id": "6e1a"
+    },
+    {
+      "nombre": "Deméter",
+      "mitologia": "Griega",
+      "descripcion": "Diosa de la agricultura, las cosechas y la fertilidad de la tierra.",
+      "grado": "Diosa",
+      "primera_aparicion": "Hesíodo, Himnos homéricos",
+      "id": "9a02"
+    },
+    {
+      "nombre": "Thor",
+      "mitologia": "Nórdica",
+      "descripcion": "Dios del trueno, el rayo, el clima y la protección de la humanidad y de los dioses.",
+      "grado": "Dios",
+      "primera_aparicion": "Edda poética",
+      "id": "5902"
+    },
+    {
+      "nombre": "Perseo",
+      "mitologia": "Griega",
+      "descripcion": "Héroe griego conocido por matar a Medusa y rescatar a Andrómeda.",
+      "grado": "Héroe",
+      "primera_aparicion": "La Ilíada",
+      "id": "c8c6"
+    },
+    {
+      "nombre": "Freyja",
+      "mitologia": "Nórdica",
+      "descripcion": "Diosa del amor, la fertilidad y la belleza, así como de la guerra, la muerte y la magia.",
+      "grado": "Diosa",
+      "primera_aparicion": "Edda prosaica",
+      "id": "472f"
+    },
+    {
+      "nombre": "Hércules",
+      "mitologia": "Griega",
+      "descripcion": "Héroe griego famoso por su fuerza y sus doce trabajos.",
+      "grado": "Héroe",
+      "primera_aparicion": "Teogonía de Hesíodo",
+      "id": "5d65"
+    },
+    {
+      "nombre": "Loki",
+      "mitologia": "Nórdica",
+      "descripcion": "Trickster y dios del fuego en la mitología nórdica, conocido por su astucia y travesuras.",
+      "grado": "Dios",
+      "primera_aparicion": "Edda prosaica",
+      "id": "c12b"
+    },
+    {
+      "nombre": "Afrodita",
+      "mitologia": "Griega",
+      "descripcion": "Diosa del amor, la belleza y la fertilidad.",
+      "grado": "Diosa",
+      "primera_aparicion": "Teogonía de Hesíodo",
+      "id": "18d6"
+    },
+    {
+      "nombre": "Balder",
+      "mitologia": "Nórdica",
+      "descripcion": "Dios de la luz, la pureza, la belleza y la justicia en la mitología nórdica.",
+      "grado": "Dios",
+      "primera_aparicion": "Edda poética",
+      "id": "7170"
+    },
+    {
+      "nombre": "Hel",
+      "mitologia": "Nórdica",
+      "descripcion": "Diosa de la muerte, que gobierna sobre el reino de los muertos conocido como Helheim.",
+      "grado": "Diosa",
+      "primera_aparicion": "Snorri Sturluson, Edda prosaica",
+      "id": "ba32"
+    },
+    {
+      "id": "9f73",
+      "nombre": "Hércules",
+      "mitologia": "Griega",
+      "descripcion": "Héroe griego famoso por su fuerza y sus doce trabajos.",
+      "grado": "Héroe",
+      "primera_aparicion": "Teogonía de Hesíodo"
+    },
+    {
+      "nombre": "Patroclo",
+      "mitologia": "Griega",
+      "descripcion": "Héroe griego famoso por su fuerza y sus doce trabajos.",
+      "grado": "Héroe",
+      "primera_aparicion": "Teogonía de Hesíodo",
+      "edad": 20,
+      "id": "e67f"
+    },
+    {
+      "id": "3335",
+      "nombre": "Hércules",
+      "mitologia": "Griega",
+      "descripcion": "Se limpió la cara con el pelaje de Scar",
+      "grado": "Héroe",
+      "primera_aparicion": "Desconocida"
+    },
+    {
+      "nombre": "Aquiles",
+      "mitologia": "Griega",
+      "descripcion": "Se limpió la cara con el pelaje de Scar",
+      "grado": "Héroe",
+      "primera_aparicion": "Desconocida",
+      "id": "a4be"
+    },
+    {
+      "id": "7e0c",
+      "nombre": "Hércules",
+      "mitologia": "Griega",
+      "descripcion": "Se limpió la cara con el pelaje de Scar",
+      "grado": "Héroe",
+      "primera_aparicion": "Desconocida"
+    },
+    {
+      "id": "f397",
+      "nombre": "Hércules",
+      "mitologia": "Griega",
+      "descripcion": "Se limpió la cara con el pelaje de Scar",
+      "grado": "Héroe",
+      "primera_aparicion": "Desconocida"
+    },
+    {
+      "id": "bc60",
+      "nombre": "Hércules",
+      "mitologia": "Griega",
+      "descripcion": "Se limpió la cara con el pelaje de Scar",
+      "grado": "Héroe",
+      "primera_aparicion": "Desconocida"
+    }
+  ],
+  "lugares": [
+    {
+      "nombre": "Olimpo",
+      "mitologia": "Griega",
+      "descripcion": "Montaña en Grecia, considerada la morada de los dioses olímpicos en la mitología griega.",
+      "primera_aparicion": "Hesíodo, Teogonía",
+      "id": "57bc"
+    },
+    {
+      "nombre": "Elíseo",
+      "mitologia": "Griega",
+      "descripcion": "Elíseo era un lugar en el inframundo donde residían las almas virtuosas y justas en la mitología griega.",
+      "primera_aparicion": "Homero, Ilíada",
+      "id": "52b8"
+    },
+    {
+      "nombre": "Tártaro",
+      "mitologia": "Griega",
+      "descripcion": "El Tártaro era el abismo oscuro en lo más profundo del inframundo, utilizado como prisión para los titanes y otros seres.",
+      "primera_aparicion": "Hesíodo, Teogonía",
+      "id": "10fd"
+    },
+    {
+      "nombre": "Asgard",
+      "mitologia": "Nórdica",
+      "descripcion": "La morada de los dioses principales en la mitología nórdica, incluido el Salón de los Dioses, Valhalla.",
+      "primera_aparicion": "Edda poética",
+      "id": "c11a"
+    },
+    {
+      "nombre": "Midgard",
+      "mitologia": "Nórdica",
+      "descripcion": "El mundo habitado por los humanos en la mitología nórdica, rodeado por una serpiente gigante llamada Jormungandr.",
+      "primera_aparicion": "Edda poética",
+      "id": "5dc1"
+    }
+  ],
+  "usuarios": [
+    {
+      "nombre": "Carlos",
+      "apellidos": "Garrido López",
+      "email": "jarko@ironhack.com",
+      "edad": 34,
+      "id": "4e16"
+    }
+  ]
+}
