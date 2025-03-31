@@ -1,130 +1,128 @@
 // const coche = {
-//   puertas: 5,
-//   modelo: "clio",
-//   matricula: "000000fff",
+//   puerta: 5,
+//   matricula: "000000fffff",
 //   color: "rojo",
 //   kmRecorridos: 10000,
 // };
-
-// // console.log(coche);
-
-// // console.log("Mi coche es de color " + coche.color);
-
-// /*
-// DRY -> Don't Repeat Yourself!!!.
-
-// KISS -> Keep it simple, stupid.
-// */
-
-// // coche.puertas = 3;
-
-// // console.log(Object.keys(coche));
-
-// const user = {
-//   nombreDeUsuario: "Paco",
-//   password: "1234",
+// const coche1 = {
+//   puerta: 3,
+//   matricula: "2222",
+//   color: "azul",
+//   kmRecorridos: 50000,
 // };
+// // coche = coche1;
+// // const -> 10,11,12,13,14,15,16,17,18...
+// // 10,11,13 -> apuntan a la caja 60000 puertas
+// // 14,15,16 -> apuntan a la caja 80000 matricula
+// // 17 -> apunta a la caja 5375 almacena color
+// // 18 -> apunta a la caja 100 almacena kmRecorridos
 
-// console.log(user);
+// console.log(coche);
+// console.log(coche.color);
 
-// delete user.password;
+// coche.color = "verde";
+// // coche.setColor("verde");
+// // coche.getColor();
 
-// console.log(user);
+// console.log(coche.color);
 
-// const personas = [1, "María", 3, 4];
+// coche.marca = "Toyota";
+// console.log(coche.marca);
 
-// const ejemploComplejo = [1, "María", coche];
+// delete coche.marca;
 
-// const ejemploComplejo2 = [coche, user];
+// console.log(coche);
 
-// console.log(personas);
-// console.log(ejemploComplejo);
-// console.log(ejemploComplejo2);
+// const peliculas = ["El señor de los anillos", "Matrix", "Forrest Gump"];
 
-// let palabra = "Ejemplo";
-// console.log(palabra.split(""));
-
-// const puerta = {
-//   color: "marron",
-//   dimensiones: "21x22",
-// };
-
-// const puerta2 = {
-//   color: "rojo",
-//   dimensiones: "21x22",
-// };
-
-// const puerta3 = {
-//   color: "verde",
-//   dimensiones: "21x22",
-// };
-
-// const casa = {
-//   puertas: [puerta, puerta2, puerta3],
-//   habitacion1: {
-//     dimensiones: 200,
+// const peliculasObj = [
+//   {
+//     name: "El señor de los anillos",
+//     year: 2001,
 //   },
-//   color: "blanco",
+//   {
+//     name: "Regreso al futuro",
+//     year: 1984,
+//   },
+//   {
+//     name: "Matrix",
+//     year: 1999,
+//   },
+//   "Una frase",
+//   1989,
+//   {
+//     puerta: 5,
+//     matricula: "000000fffff",
+//     color: "rojo",
+//     kmRecorridos: 10000,
+//     concesionario: {
+//       name: "Málaga Car",
+//       year: 1990,
+//     },
+//   },
+// ];
+
+// console.log(peliculasObj);
+// console.log(peliculasObj[0]);
+// console.log(peliculasObj[0].name);
+
+// // Arrays -> Están ordenados
+// // Objetos -> No están ordenados
+
+// const repetido = [0, 1, 2, 3, 0, 1, 2, 3];
+// const repetidoObj = {
+//   primer: 1,
+//   segun: 2,
+//   tercer: 3,
+//   primer: 4,
 // };
 
-// console.log(casa.color);
-
-// for (let i = 0; i < 5; i++) {
-//   let patata = "patata";
-//   console.log(patata);
+// const peliculaArray = {
+//   name: "Matrix",
+//   year: 1999,
+//   cast: [{
+//     id: 1,
+//     name: "Keanu Reeves",
+//     year: 1650,
+//     rol: "main character"
+//   }]
 // }
 
-// for (let i = 0; i < 5; i++) {
-//   let patata = "patata";
-//   console.log(patata);
-// }
+// console.log(repetidoObj)
 
-// let numero = 1600;
+const peliculasObj = [
+  {
+    name: "El señor de los anillos",
+    year: 2001,
+  },
+  {
+    name: "Regreso al futuro",
+    year: 1984,
+  },
+  {
+    name: "Matrix",
+    year: 1999,
+  },
+];
 
-function dividir(n) {
-  let index = 0;
-  while (n > 1) {
-    n = n / 2;
-    index++;
-  }
-  console.log(n);
-  console.log(index);
+for (let i = 0; i < peliculasObj.length; i++) {
+  console.log(i + 1 + " - " + peliculasObj[i].name);
 }
 
-// dividir(1600);
-// dividir(numero);
+const peliculas = "Un conjunto de películas";
+console.log(peliculas);
 
-// console.log(5);
+function pelis(peliculas) {
+  console.log(peliculas);
+  // Va a recorrer todas las pelis, mostrando su nombre.
 
-function porteroDeDiscoteca(mayorDeEdad) {
-  let result = false;
+  if (!peliculas.length) return;
 
-  if (mayorDeEdad >= 18) {
-    console.log("Puedes pasar");
-    result = true;
-  } else {
-    console.log("No puedes pasar");
-  }
-
-  return result;
+  peliculas.forEach((pelicula, index) =>
+    console.log(index + 1 + " - " + pelicula.name)
+  );
 }
+console.log(peliculas);
 
-function porteroDeDiscotecaAlternativa(mayorDeEdad) {
-  let result = "No puedes pasar";
-
-  if (mayorDeEdad >= 18) {
-    result = "Puedes pasar";
-  }
-
-  return result;
-}
-
-porteroDeDiscoteca(18);
-
-console.log(porteroDeDiscotecaAlternativa(18));
-
-let puedoPasar = porteroDeDiscotecaAlternativa(20);
-
-let ejemploVariosValores = "Aquí un ejemplo";
-
-console.log(ejemploVariosValores.split(""))
+pelis(peliculasObj);
+console.log(peliculas);
