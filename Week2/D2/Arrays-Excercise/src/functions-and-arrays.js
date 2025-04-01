@@ -1,10 +1,5 @@
 function maxOfTwoNumbers(a, b) {
-  // Operador ternario
   return a > b ? a : b;
-  // Cómo se lee
-  // ¿se cumple que a > b?
-  // Antes de los dos puntos -> respuesta afirmativa.
-  // Tras los dos puntos -> respuesta negativa.
 }
 
 function findLongestWord(words) {
@@ -16,27 +11,38 @@ function findLongestWord(words) {
 }
 
 function sumNumbers(arr) {
-  return arr.reduce((sum, elem) => {
-    if (typeof elem === "number") return sum + elem;
+  return arr.reduce((total, actual) => {
+    return total + actual;
   }, 0);
+  // let result = 0;
+
+  // for(let i=0; i<arr.length; i++){
+  //   result += arr[i];
+  // }
+
+  // return result;
 }
 
 function sum(arr) {
-  return arr.reduce((sum, elem) => {
-    if (typeof elem === "number") return sum + elem;
-    if (typeof elem === "string") return sum + elem.length;
-    if (typeof elem === "boolean") return sum + (elem ? 1 : 0);
-    throw new Error("Unsupported data type");
+  if (!arr.length) return 0;
+
+  return arr.reduce((acc, elem) => {
+    if (typeof elem === "number") return acc + elem;
+    if (typeof elem === "string") return acc + elem.length;
+    if (typeof elem === "boolean") return acc + (elem ? 1 : 0);
+    throw new Error("Tipo de dato no soportado");
   }, 0);
 }
 
 function averageNumbers(numbers) {
   if (!numbers.length) return null;
+
   return sum(numbers) / numbers.length;
 }
 
 function averageWordLength(words) {
   if (!words.length) return null;
+
   return sum(words) / words.length;
 }
 
@@ -59,13 +65,14 @@ function howManyTimes(arr, word) {
   return arr.filter((item) => item === word).length;
 }
 
-function calculateIndex(maxValue, currentIndex) {
+function calculate(maxValue, currentIndex) {
   if (currentIndex < 0) currentIndex = -currentIndex;
   return currentIndex % maxValue;
 }
 
 function greatestProductOfDiagonals(matrix) {
   if (matrix.length < 4) return 0;
+
   let dimension = matrix.length;
   let diagonals = [];
 
@@ -75,23 +82,19 @@ function greatestProductOfDiagonals(matrix) {
 
     for (let j = 0; j < dimension; j++) {
       counter *=
-        matrix[calculateIndex(dimension, matrixIndexI)][
-          calculateIndex(dimension, j)
-        ];
+        matrix[calculate(dimension, matrixIndexI)][calculate(dimension, j)];
       matrixIndexI++;
     }
     diagonals.push(counter);
   }
 
-  for (let i = dimension - 1; i <= 0; i--) {
+  for (let i = dimension - 1; i >= 0; i--) {
     let counter = 1;
     let matrixIndexI = i;
 
-    for (let j = dimension - 1; j <= 0; j--) {
+    for (let j = dimension - 1; j >= 0; j--) {
       counter *=
-        matrix[calculateIndex(dimension, matrixIndexI)][
-          calculateIndex(dimension, j)
-        ];
+        matrix[calculate(dimension, matrixIndexI)][calculate(dimension, j)];
       matrixIndexI++;
     }
     diagonals.push(counter);
