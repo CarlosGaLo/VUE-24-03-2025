@@ -26,3 +26,4 @@
 ### Semana 2
 
  - [Día 1 - JS - Arrays y objetos](https://ironhack.zoom.us/rec/share/YofOIiKXTXknMzH7oJv41BVNIAVTcj73wv1mx8w5bL6_wmYysQtMaADlG20bpKmA.iiYOZSbEo5HBuuxy)
+ - [Día 2 - JS - Arrays y objetos](https://ironhack.zoom.us/rec/share/hXJMnJcL7zIrNnNIlP5vWFIFGif6TTTOvx_0A5ECimtqV3Qh4q6G9x-nQgNvPYBh.mTAy-5eP_xghVphX)
