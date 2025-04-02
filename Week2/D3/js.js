@@ -1,147 +1,74 @@
-//
-// // ¿Cómo se llama a la pág web en JS? -> DOM = HTML + CSS
-// // Mediante la palabra reservada "document"
+// // ¿Cómo se llama la página web en JS? -> DOM = HTML + CSS
+// // Para acceder a la web tenemos la palabra reservada Document
+
 // let h1 = document.getElementsByTagName("h1");
-// console.log(h1);
+// console.log(h1[0]);
 // h1[0].innerText += " II";
 
-// // Accedemos a todos los p
 // let p = document.getElementsByTagName("p");
 // console.log(p);
-// for (let i = 0; i < p.length; i++) {
-//   p[i].style.color = "red";
-// }
 
-// // Vamos a acceder mediante la clase al elemento div-prueba
-// let div = document.getElementsByClassName("div-prueba");
-// console.log(div);
+// for (let i = 0; i < p.length; i++) p[i].style.color = "red";
 
-// // Vamos a acceder mediante la ID al elemento crear table
-// const actores = [
-//   { personaje: "Marty McFly", actor: "Michael J. Fox" },
-//   { personaje: "Doc Emmett Brown", actor: "Christopher Lloyd" },
-//   { personaje: "Clara Clayton", actor: "Mary Steenburgen" },
-//   { personaje: "Buford 'Mad Dog' Tannen", actor: "Thomas F. Wilson" },
-//   { personaje: "Maggie McFly / Lorraine McFly", actor: "Lea Thompson" },
-// ];
+// let divPrueba = document.getElementsByClassName("div-prueba");
+// console.log(divPrueba[0]);
 
-// let tablaPreHTML = `
-//     <table>
-//         <tr>
-//             <th>Personaje</th>
-//             <th>Actor</th>
-//         </tr>
-// `;
+const actores = [
+  { personaje: "Marty McFly", actor: "Michael J. Fox" },
+  { personaje: "Doc Emmett Brown", actor: "Christopher Lloyd" },
+  { personaje: "Clara Clayton", actor: "Mary Steenburgen" },
+  { personaje: "Buford 'Mad Dog' Tannen", actor: "Thomas F. Wilson" },
+  { personaje: "Maggie McFly / Lorraine McFly", actor: "Lea Thompson" },
+];
 
-// /*
-//     Las siguientes líneas de código se leen como:
-//     Al HTML de tabla añádele este HTML que te paso entre backticks.
-// */
-// actores.forEach((el) => {
-//   tablaPreHTML += `
-//   <tr>
-//       <td>${el.personaje}</td>
-//       <td>${el.actor}</td>
-//   </tr>`;
-// });
+let tablaPreHTML = `
+<table>
+<tr>
+<th>Personaje</th>
+<th>Actor</th>
+</tr>
+`;
 
-// tablaPreHTML += `</table>`;
+actores.forEach((actor) => {
+  tablaPreHTML += `
+    <tr>
+    <td>${actor.personaje}</td>
+    <td>${actor.actor}</td>
+    </tr>
+    `;
+});
 
-// let tabla = document.getElementById("crear-tabla");
-// tabla.innerHTML = tablaPreHTML;
+tablaPreHTML += `</tabla>`;
+// console.log(tablaPreHTML);
 
-// let title = document.querySelector("#title");
-// title.innerText += "I";
+let tabla = document.getElementById("contenedor");
 
-// let parrafo = document.querySelector("p");
-// console.log(parrafo);
+tabla.innerHTML = tablaPreHTML;
 
-// let allP = document.querySelectorAll("p");
-// console.log(allP);
+let title = document.querySelector("#title");
+console.log(title);
+title.innerText += " III";
 
-// let secondP = document.querySelector("div p");
-// console.log(secondP);
-// secondP.style.color = "blue";
+let divSelector = document.querySelectorAll(".div-prueba");
+console.log(divSelector);
 
-// function randomColor() {
-//     /*
-//     0º Los colores van desde el 0 hasta el ffffff
-//         1º Genero un número aleatorio. P.ej -> 0.68952134654984531321
-//         2º Multiplico por cien mil. P.ej -> 68952.134654984531321
-//         3º Quito los decimales con el floor -> 68952
-//         4º Lo paso a hexadecimal con el toString -> 10D58
-//     */
-//   return "#" + Math.floor(Math.random() * 100000).toString(16);
-// }
-// let cuadrado = document.getElementsByClassName("cuadrado");
+function randomColor() {
+  /*
+    0 - Los colores van desde el 0 hasta el ffffff
+    1º - Genere un número aleatorio -> 0.546464516541651
+    2º - Multiplicalo por cien mil -> 54646.4516541651
+    3º - Uso Floor para quitar decimales -> 54646
+    4º - Lo paso a hexadecimal con el toString -> 10d55a
+    5º - Quiero que me lo devuelva con el símbolo # delante
+    */
+  return "#" + Math.floor(Math.random() * 100000).toString(16);
+}
 
-// function cambiarColor() {
-//   for (let i = 0; i < cuadrado.length; i++) {
-//     cuadrado[i].style.backgroundColor = randomColor();
-//   }
-// }
-// setInterval(cambiarColor, 500);
+let cuadrado = document.getElementsByClassName("cuadrado");
 
-// const btn1 = document.querySelector("#btn1");
-// btn1.onclick = () => {
-//   alert("Hasta la vista, cocodrilo");
-// };
+function cambiarColor() {
+  for (let i = 0; i < cuadrado.length; i++)
+    cuadrado[i].style.backgroundColor = randomColor();
+}
 
-// const btn2 = document.querySelector("#btn2");
-// btn2.onclick = function () {
-//   alert("Hasta la vista, artista");
-// };
-
-// const btn3 = document.querySelector("#btn3");
-// btn3.addEventListener("click", () => {
-//   alert("Sayonara, baby");
-// });
-
-// function alertFunction() {
-//   alert("Buenos días, buenas tardes y buenas noches.");
-// }
-// const btn4 = document.querySelector("#btn4");
-// btn4.onclick = alertFunction;
-
-// const btn5 = document.querySelector("#btn5");
-// btn5.addEventListener("click", alertFunction);
-
-// let miFormulario = document.getElementById("miFormulario");
-
-// miFormulario.onsubmit = (event) => {
-//   event.preventDefault();
-
-//   let nombre = document.getElementById("nombre").value;
-//   console.log(nombre);
-
-//   let email = document.getElementById("email").value;
-//   console.log(email);
-
-//   let descripcion = document.getElementById("descripcion").value;
-//   console.log(descripcion);
-// };
-
-//Creo el elemento
-let h2Element = document.createElement("h2");
-// Le añado algún contenido
-h2Element.textContent = "h2 creado dinámicamente";
-// Lo anexo a un elemento HTML previo
-document.getElementById("contenedor").appendChild(h2Element);
-
-//Creo el elemento
-let h3Element = document.createElement("h3");
-// Le añado algún contenido
-h3Element.textContent = "h3 creado dinámicamente";
-// Lo anexo a un elemento HTML previo
-document.getElementById("contenedor").appendChild(h3Element);
-
-h3Element.remove();
-
-//Creo el elemento
-let h4Element = document.createElement("h4");
-// Le añado algún contenido
-h4Element.textContent = "h4 creado dinámicamente";
-// Lo anexo a un elemento HTML previo
-document.getElementById("contenedor").appendChild(h4Element);
-
-h4Element.setAttribute("class", "cuadrado");
+// setInterval(cambiarColor, 500)
