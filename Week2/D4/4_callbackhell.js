@@ -1,10 +1,6 @@
-// Función de ejemplo que simula una solicitud de red. A las solicitudes de red se les llama request, por eso le vamos a poner este nombre.
 function request(url, callback) {
-  // Simulamos una solicitud de red que toma 1 segundo
   setTimeout(() => {
-    // Simulamos que recibimos datos
     let data = "Datos obtenidos de " + url;
-    // Llamamos al callback con los datos obtenidos
     callback(data);
   }, 1000);
 }

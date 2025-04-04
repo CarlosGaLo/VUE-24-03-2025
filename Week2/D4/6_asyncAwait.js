@@ -1,13 +1,12 @@
 async function obtainData() {
-    try {
-      const response = await fetch("https://api.spacexdata.com/v4/launches");
-      const jsonResponse = await response.json();
-   
-      console.log("Parsed response: ", jsonResponse);
-    } catch (err) {
-      // Handle error or a rejected Promise
-      console.log("Something went wrong!", err);
-    }
+  try {
+    const response = await fetch("https://api.spacexdata.com/v4/launches");
+    const jsonReponse = await response.json();
+
+    console.log("Parsed response: ", jsonReponse);
+  } catch(err) {
+    console.error("Algo ha ido mal", err)
   }
-   
-  obtainData();
+}
+
+obtainData();

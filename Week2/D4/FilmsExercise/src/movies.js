@@ -8,7 +8,7 @@ function getAllDirectors(movies) {
 // Function "howManyMovies"
 // Returns the number of drama movies directed by Steven Spielberg
 function howManyMovies(movies) {
-  if (movies.length === 0) return 0;
+  if (!movies.length) return 0;
   return movies.filter(
     movie => movie.director === 'Steven Spielberg' && movie.genre.includes('Drama')
   ).length;
@@ -28,7 +28,7 @@ function scoresAverage(movies) {
 // Returns the average score of all drama movies, rounded to 2 decimal places
 function dramaMoviesScore(movies) {
   const dramaMovies = movies.filter(movie => movie.genre.includes('Drama'));
-  if (dramaMovies.length === 0) return 0;
+  if (!dramaMovies.length) return 0;
   return scoresAverage(dramaMovies);
 }
 
@@ -59,7 +59,7 @@ function turnHoursToMinutes(movies) {
   return movies.map(movie => {
     const duration = movie.duration;
     let minutes = 0;
-
+    
     if (duration.includes('h')) {
       minutes += parseInt(duration.split('h')[0]) * 60;
     }
@@ -100,6 +100,6 @@ function bestYearAvg(movies) {
       bestYear = Math.min(bestYear, year);
     }
   }
-  console.log(bestYear, bestAverage)
+  
   return `The best year was ${bestYear} with an average score of ${bestAverage}`;
 }

@@ -25,5 +25,7 @@
 
 ### Semana 2
 
- - [Día 1 - JS - Arrays y objetos](https://ironhack.zoom.us/rec/share/YofOIiKXTXknMzH7oJv41BVNIAVTcj73wv1mx8w5bL6_wmYysQtMaADlG20bpKmA.iiYOZSbEo5HBuuxy)
- - [Día 2 - JS - Arrays y objetos](https://ironhack.zoom.us/rec/share/hXJMnJcL7zIrNnNIlP5vWFIFGif6TTTOvx_0A5ECimtqV3Qh4q6G9x-nQgNvPYBh.mTAy-5eP_xghVphX)
+- [Día 1 - JS - Arrays y objetos](https://ironhack.zoom.us/rec/share/YofOIiKXTXknMzH7oJv41BVNIAVTcj73wv1mx8w5bL6_wmYysQtMaADlG20bpKmA.iiYOZSbEo5HBuuxy)
+- [Día 2 - JS - Arrays y objetos](https://ironhack.zoom.us/rec/share/hXJMnJcL7zIrNnNIlP5vWFIFGif6TTTOvx_0A5ECimtqV3Qh4q6G9x-nQgNvPYBh.mTAy-5eP_xghVphX)
+- [Día 3 - JS - DOM](https://ironhack.zoom.us/rec/share/QR5Al7Pmb3CXdR7NEDB38sNaDI-kGcQAhFcf8dSGhgHsdT9MZCkiG2MlvI9gKCNu.QU8CLZiqpZp0dM7u)
+- [Día 4 - JS - Asincronía](https://ironhack.zoom.us/rec/share/94K1MoNC7Fixplr9Xicq3P7gXRvRbHO8XpQONT8HJuamF1eF7EMgeAYDTbP-keVO.Ls0bykysU8B3w5Og)
