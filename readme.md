@@ -29,3 +29,7 @@
 - [Día 2 - JS - Arrays y objetos](https://ironhack.zoom.us/rec/share/hXJMnJcL7zIrNnNIlP5vWFIFGif6TTTOvx_0A5ECimtqV3Qh4q6G9x-nQgNvPYBh.mTAy-5eP_xghVphX)
 - [Día 3 - JS - DOM](https://ironhack.zoom.us/rec/share/QR5Al7Pmb3CXdR7NEDB38sNaDI-kGcQAhFcf8dSGhgHsdT9MZCkiG2MlvI9gKCNu.QU8CLZiqpZp0dM7u)
 - [Día 4 - JS - Asincronía](https://ironhack.zoom.us/rec/share/94K1MoNC7Fixplr9Xicq3P7gXRvRbHO8XpQONT8HJuamF1eF7EMgeAYDTbP-keVO.Ls0bykysU8B3w5Og)
+
+### Semana 3
+
+- [Día 1 - Destructuring y Presentación del midterm](https://ironhack.zoom.us/rec/share/qkq5bLspJbbTUu-AKt70oZHO0EBJaAbJPR-RFws1TP6HIcXgAIf6S2Vq7dLH-ZVy.14uBcv4kVSTdvV1U)

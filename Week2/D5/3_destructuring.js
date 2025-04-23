@@ -14,14 +14,13 @@ const person = {
 };
 
 // Extraer propiedades individuales del objeto
-const { name, age, city } = person;
+// const { name, age, city } = person;
 
 console.log(name); // Output: 'John'
 console.log(age); // Output: 30
 console.log(city); // Output: 'New York'
 
-
-/* La forma tradicional de haberlo hecho, sería: */ 
+/* La forma tradicional de haberlo hecho, sería: */
 const numbersT = [1, 2, 3, 4, 5];
 
 // Acceder a valores individuales del array
@@ -29,15 +28,36 @@ const firstT = numbers[0];
 const secondT = numbers[1];
 const fourthT = numbers[3];
 
-console.log(firstT);   // Output: 1
-console.log(secondT);  // Output: 2
-console.log(fourthT);  // Output: 4
+console.log(firstT); // Output: 1
+console.log(secondT); // Output: 2
+console.log(fourthT); // Output: 4
 
 // Acceder a propiedades individuales del objeto
 const nameT = person.name;
 const ageT = person.age;
 const cityT = person.city;
 
-console.log(nameT);  // Output: 'John'
-console.log(ageT);   // Output: 30
-console.log(cityT);  // Output: 'New York'
+console.log(nameT); // Output: 'John'
+console.log(ageT); // Output: 30
+console.log(cityT); // Output: 'New York'
+
+// const arrayObjetos = [
+//   {
+//     name: "John",
+//     age: 30,
+//     city: "New York",
+//   },
+//   {
+//     name: "María",
+//     age: 20,
+//     city: "Barcelona",
+//   },
+// ];
+
+// const [persona1, persona2] = arrayObjetos;
+// // Extraer propiedades individuales del objeto
+// const { name, age, city } = arrayObjetos[0];
+
+// // const name = person1.name;
+// // const age = person1.age;
+// // const city = person1.city;
