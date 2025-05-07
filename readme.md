@@ -33,3 +33,7 @@
 ### Semana 3
 
 - [Día 1 - Destructuring y Presentación del midterm](https://ironhack.zoom.us/rec/share/qkq5bLspJbbTUu-AKt70oZHO0EBJaAbJPR-RFws1TP6HIcXgAIf6S2Vq7dLH-ZVy.14uBcv4kVSTdvV1U)
+
+### Semana 4
+
+- [Día 2 - Vue](https://ironhack.zoom.us/rec/share/YfT3gVtLJSZg5V_vd4rKMCfu0sRNGZdJhW--arlGJm4VgwNc0nrkRqWQmrr2CMqq.Cj4KDpmME9x4wc0S)
