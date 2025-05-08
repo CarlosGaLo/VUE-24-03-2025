@@ -37,3 +37,4 @@
 ### Semana 4
 
 - [Día 2 - Vue](https://ironhack.zoom.us/rec/share/YfT3gVtLJSZg5V_vd4rKMCfu0sRNGZdJhW--arlGJm4VgwNc0nrkRqWQmrr2CMqq.Cj4KDpmME9x4wc0S)
+- [Día 3 - VUE](https://ironhack.zoom.us/rec/share/9ITxMKFENl7psnpp9RmQXDZZZMRz1LNABC-PHDoiPwplt35brlxf6H06UIgsa0n2.aeLmgypf5zzUWlsn)

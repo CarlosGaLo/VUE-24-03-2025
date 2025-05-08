@@ -8,6 +8,7 @@ const errorMsg = ref('Ha habido un error!')
 const texto = ref('texto')
 const color = ref('color')
 const colorAlt = ref('')
+const busqueda = ref("");
 const animals = ['gato', 'perro', 'rata', 'tortuga', 'dorada']
 const paises = ['España', 'Argentina', 'Italia', 'Alemania']
 const animalsTable = [
@@ -87,6 +88,15 @@ function sendTxt() {
       </ul>
       <br />
       <h2>Lista de paises</h2>
+      <ul>
+        <li v-for="pais in paises">{{ pais }}</li>
+      </ul>
+    </article>
+    <article>
+        <input type="text" v-model="busqueda" />
+      <ul>
+        <li :class="animal === busqueda ? 'color-alt':'color'" v-for="(animal, index) in animals" :key="index">{{ animal }}</li>
+      </ul>
       <ul>
         <li v-for="pais in paises">{{ pais }}</li>
       </ul>
