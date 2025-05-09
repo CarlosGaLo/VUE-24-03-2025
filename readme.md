@@ -36,5 +36,6 @@
 
 ### Semana 4
 
-- [Día 2 - Vue](https://ironhack.zoom.us/rec/share/YfT3gVtLJSZg5V_vd4rKMCfu0sRNGZdJhW--arlGJm4VgwNc0nrkRqWQmrr2CMqq.Cj4KDpmME9x4wc0S)
-- [Día 3 - VUE](https://ironhack.zoom.us/rec/share/9ITxMKFENl7psnpp9RmQXDZZZMRz1LNABC-PHDoiPwplt35brlxf6H06UIgsa0n2.aeLmgypf5zzUWlsn)
+- [Día 2 - Vue - Inicio](https://ironhack.zoom.us/rec/share/YfT3gVtLJSZg5V_vd4rKMCfu0sRNGZdJhW--arlGJm4VgwNc0nrkRqWQmrr2CMqq.Cj4KDpmME9x4wc0S)
+- [Día 3 - VUE - Basics](https://ironhack.zoom.us/rec/share/9ITxMKFENl7psnpp9RmQXDZZZMRz1LNABC-PHDoiPwplt35brlxf6H06UIgsa0n2.aeLmgypf5zzUWlsn)
+- [Día 4- Vue - Props y emits](https://ironhack.zoom.us/rec/share/J3nWhWJb1niuONjym0ud_XePJtRIFHm4D5M2L2WtdXbM7YSdRiXFQG858DWOgfB6.1gIz2PGYxt-6xQOz)
