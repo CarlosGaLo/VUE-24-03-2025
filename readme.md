@@ -39,3 +39,7 @@
 - [Día 2 - Vue - Inicio](https://ironhack.zoom.us/rec/share/YfT3gVtLJSZg5V_vd4rKMCfu0sRNGZdJhW--arlGJm4VgwNc0nrkRqWQmrr2CMqq.Cj4KDpmME9x4wc0S)
 - [Día 3 - VUE - Basics](https://ironhack.zoom.us/rec/share/9ITxMKFENl7psnpp9RmQXDZZZMRz1LNABC-PHDoiPwplt35brlxf6H06UIgsa0n2.aeLmgypf5zzUWlsn)
 - [Día 4- Vue - Props y emits](https://ironhack.zoom.us/rec/share/J3nWhWJb1niuONjym0ud_XePJtRIFHm4D5M2L2WtdXbM7YSdRiXFQG858DWOgfB6.1gIz2PGYxt-6xQOz)
+
+### Semana 5
+
+- [Día 1 - API fetch](https://ironhack.zoom.us/rec/share/Puj5tJr-4fXDm3HZrvMQJ6FSmASfXRGbVNm65x4eZCh0h4a3gSm96euMC5XCg9gW.vZ2EK1I0R01GaLkW)
