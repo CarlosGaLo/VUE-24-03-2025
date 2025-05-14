@@ -43,3 +43,4 @@
 ### Semana 5
 
 - [Día 1 - API fetch](https://ironhack.zoom.us/rec/share/Puj5tJr-4fXDm3HZrvMQJ6FSmASfXRGbVNm65x4eZCh0h4a3gSm96euMC5XCg9gW.vZ2EK1I0R01GaLkW)
+- [Día 2 - supabase](https://ironhack.zoom.us/rec/share/WyJ0l2bQGvS_0Duk8cxbUQFV5MLfIw0RrF6UuxjNGI6WHq9QB7mBNsBlPRGo2thq.8s_-XZ-94v8uKyG6)
